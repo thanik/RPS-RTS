@@ -5,6 +5,11 @@ using UnityEngine;
 public enum NetworkObjectType
 {
     BUILDING,
+    UNIT
+}
+
+public enum NetworkUnitType
+{
     ROCK,
     PAPER,
     SCISSORS
@@ -23,11 +28,13 @@ public class NetworkObject : MonoBehaviour
     public int objectID;
     public int clientOwnerID;
     public NetworkObjectType objectType;
+    public NetworkUnitType unitType;
     public NetworkObjectAction currentAction;
     public Vector3 positionTarget;
     public int objectIDTarget;
     public int health;
     public int objectLevel;
+    public float cooldownTime;
     public Vector3[] positionQueue = new Vector3[2];
     public float[] networkTimeQueue = new float[2];
     void Start()

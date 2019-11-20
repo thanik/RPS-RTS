@@ -16,6 +16,24 @@ public class GameManagement : Singleton<GameManagement>
     public GameMode gameMode = GameMode.NONE;
     public float gameStartTime = 0f;
     public List<Color> playerColorCode = new List<Color>();
+    public Dictionary<NetworkObjectType, int> maxHealth = new Dictionary<NetworkObjectType, int>() {
+        { NetworkObjectType.BUILDING, 2000 },
+        { NetworkObjectType.UNIT, 100 }
+    };
+    public Dictionary<int, float> unitActionCooldown = new Dictionary<int, float>() {
+        { 1, 1f },
+        { 2, 0.75f },
+        { 3, 0.5f },
+        { 4, 0.25f },
+        { 5, 0.15f }
+    };
+    public Dictionary<int, float> buildingActionCooldown = new Dictionary<int, float>() {
+        { 1, 2.5f },
+        { 2, 2f },
+        { 3, 1.5f },
+        { 4, 1f },
+        { 5, 0.5f }
+    };
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +55,7 @@ public class GameManagement : Singleton<GameManagement>
         
     }
 
+    #region Server
     // gameStartTime will be set on server
     public void setGameStartTime()
     {
@@ -60,4 +79,5 @@ public class GameManagement : Singleton<GameManagement>
     {
 
     }
+    #endregion
 }
