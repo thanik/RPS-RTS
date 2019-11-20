@@ -1,0 +1,3127 @@
+fileFormatVersion: 2
+guid: 0467ab70232d1124d90dcfeed7f6f144
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -730100288125635459
+    second: RTS_medieval@2_0
+  - first:
+      213: 1086783647822359178
+    second: RTS_medieval@2_1
+  - first:
+      213: -8223888522509754171
+    second: RTS_medieval@2_2
+  - first:
+      213: -3055401472402145613
+    second: RTS_medieval@2_3
+  - first:
+      213: -5221642237017938455
+    second: RTS_medieval@2_4
+  - first:
+      213: 4534640832196463326
+    second: RTS_medieval@2_5
+  - first:
+      213: -5868241393608159542
+    second: RTS_medieval@2_6
+  - first:
+      213: -8733742038249469284
+    second: RTS_medieval@2_7
+  - first:
+      213: 4625306433555912779
+    second: RTS_medieval@2_8
+  - first:
+      213: 3784413022584779671
+    second: RTS_medieval@2_9
+  - first:
+      213: -3151152826728203068
+    second: RTS_medieval@2_10
+  - first:
+      213: -7034178006129912602
+    second: RTS_medieval@2_11
+  - first:
+      213: -8132751026731055030
+    second: RTS_medieval@2_12
+  - first:
+      213: -6153184113562294778
+    second: RTS_medieval@2_13
+  - first:
+      213: -4147054728263199701
+    second: RTS_medieval@2_14
+  - first:
+      213: -3130654362534477834
+    second: RTS_medieval@2_15
+  - first:
+      213: -8743592249306041209
+    second: RTS_medieval@2_16
+  - first:
+      213: -7213424425299681046
+    second: RTS_medieval@2_17
+  - first:
+      213: -2503936262394839839
+    second: RTS_medieval@2_18
+  - first:
+      213: 7879457391367873932
+    second: RTS_medieval@2_19
+  - first:
+      213: -3541834622323829016
+    second: RTS_medieval@2_20
+  - first:
+      213: -3636977471343087293
+    second: RTS_medieval@2_21
+  - first:
+      213: -7551075211332358335
+    second: RTS_medieval@2_22
+  - first:
+      213: -6229460234617728499
+    second: RTS_medieval@2_23
+  - first:
+      213: -5340369211581611182
+    second: RTS_medieval@2_24
+  - first:
+      213: -2036212386645575834
+    second: RTS_medieval@2_25
+  - first:
+      213: 6458952519893294719
+    second: RTS_medieval@2_26
+  - first:
+      213: 509550879037499524
+    second: RTS_medieval@2_27
+  - first:
+      213: 7113538930650831388
+    second: RTS_medieval@2_28
+  - first:
+      213: -4557111500465654064
+    second: RTS_medieval@2_29
+  - first:
+      213: -8381106119904367951
+    second: RTS_medieval@2_30
+  - first:
+      213: 656708242795963553
+    second: RTS_medieval@2_31
+  - first:
+      213: 134106429331119553
+    second: RTS_medieval@2_32
+  - first:
+      213: 5758353508231783875
+    second: RTS_medieval@2_33
+  - first:
+      213: 8344326340976807322
+    second: RTS_medieval@2_34
+  - first:
+      213: 5047260665697350640
+    second: RTS_medieval@2_35
+  - first:
+      213: -8058465657368014882
+    second: RTS_medieval@2_36
+  - first:
+      213: 5094330715482595348
+    second: RTS_medieval@2_37
+  - first:
+      213: 19678382450290332
+    second: RTS_medieval@2_38
+  - first:
+      213: -1768809774793793713
+    second: RTS_medieval@2_39
+  - first:
+      213: 1149008071826741358
+    second: RTS_medieval@2_40
+  - first:
+      213: -8358397607224773051
+    second: RTS_medieval@2_41
+  - first:
+      213: -484265556908112515
+    second: RTS_medieval@2_42
+  - first:
+      213: 5942490959377587896
+    second: RTS_medieval@2_43
+  - first:
+      213: -7536498660030301779
+    second: RTS_medieval@2_44
+  - first:
+      213: 5836409563368825845
+    second: RTS_medieval@2_45
+  - first:
+      213: -3271295092334569819
+    second: RTS_medieval@2_46
+  - first:
+      213: -1612883915679594851
+    second: RTS_medieval@2_47
+  - first:
+      213: -6370300945529733233
+    second: RTS_medieval@2_48
+  - first:
+      213: -5085404942661939862
+    second: RTS_medieval@2_49
+  - first:
+      213: 6461198350511160410
+    second: RTS_medieval@2_50
+  - first:
+      213: 6753778741073851084
+    second: RTS_medieval@2_51
+  - first:
+      213: -8264385356409226980
+    second: RTS_medieval@2_52
+  - first:
+      213: 6759850744859138396
+    second: RTS_medieval@2_53
+  - first:
+      213: -556118313800811176
+    second: RTS_medieval@2_54
+  - first:
+      213: -1415417223570822499
+    second: RTS_medieval@2_55
+  - first:
+      213: 778087837257136957
+    second: RTS_medieval@2_56
+  - first:
+      213: 6922640578579055174
+    second: RTS_medieval@2_57
+  - first:
+      213: -7258931191175352897
+    second: RTS_medieval@2_58
+  - first:
+      213: 1824928745428258137
+    second: RTS_medieval@2_59
+  - first:
+      213: -6983012190488632922
+    second: RTS_medieval@2_60
+  - first:
+      213: -3381903629031533044
+    second: RTS_medieval@2_61
+  - first:
+      213: 7129598175556369529
+    second: RTS_medieval@2_62
+  - first:
+      213: 9176636359420830794
+    second: RTS_medieval@2_63
+  - first:
+      213: 5380709053851162247
+    second: RTS_medieval@2_64
+  - first:
+      213: -6011161016835228539
+    second: RTS_medieval@2_65
+  - first:
+      213: -6668545130738482440
+    second: RTS_medieval@2_66
+  - first:
+      213: 2217946122627970240
+    second: RTS_medieval@2_67
+  - first:
+      213: 6299004766935064703
+    second: RTS_medieval@2_68
+  - first:
+      213: 1393448601001536536
+    second: RTS_medieval@2_69
+  - first:
+      213: 3740511475120258559
+    second: RTS_medieval@2_70
+  - first:
+      213: 3926084611118714883
+    second: RTS_medieval@2_71
+  - first:
+      213: 8907107067430532193
+    second: RTS_medieval@2_72
+  - first:
+      213: -7931344410939115632
+    second: RTS_medieval@2_73
+  - first:
+      213: -6937208429874386769
+    second: RTS_medieval@2_74
+  - first:
+      213: 411220424465931126
+    second: RTS_medieval@2_75
+  - first:
+      213: -5401757774300699409
+    second: RTS_medieval@2_76
+  - first:
+      213: 7077396769917492235
+    second: RTS_medieval@2_77
+  - first:
+      213: -230323833089978747
+    second: RTS_medieval@2_78
+  - first:
+      213: 2796034122687528804
+    second: RTS_medieval@2_79
+  - first:
+      213: 1599936576673124362
+    second: RTS_medieval@2_80
+  - first:
+      213: -292200037773161127
+    second: RTS_medieval@2_81
+  - first:
+      213: 299424313056821395
+    second: RTS_medieval@2_82
+  - first:
+      213: 2738681656019124198
+    second: RTS_medieval@2_83
+  - first:
+      213: 5659369361713314012
+    second: RTS_medieval@2_84
+  - first:
+      213: -65575116922254399
+    second: RTS_medieval@2_85
+  - first:
+      213: 2992292391840909854
+    second: RTS_medieval@2_86
+  - first:
+      213: -7695994273673767328
+    second: RTS_medieval@2_87
+  - first:
+      213: 472577842669310397
+    second: RTS_medieval@2_88
+  - first:
+      213: 6030275870479518072
+    second: RTS_medieval@2_89
+  - first:
+      213: -8163637813667040292
+    second: RTS_medieval@2_90
+  - first:
+      213: 3766598191810627093
+    second: RTS_medieval@2_91
+  - first:
+      213: -5949159941904860711
+    second: RTS_medieval@2_92
+  - first:
+      213: 5833367921090067671
+    second: RTS_medieval@2_93
+  - first:
+      213: 7119636100861762631
+    second: RTS_medieval@2_94
+  - first:
+      213: 1655814789752226600
+    second: RTS_medieval@2_95
+  - first:
+      213: -6651681409455578642
+    second: RTS_medieval@2_96
+  - first:
+      213: 6741070306424969747
+    second: RTS_medieval@2_97
+  - first:
+      213: -3039786808657108903
+    second: RTS_medieval@2_98
+  - first:
+      213: -3244139519589747376
+    second: RTS_medieval@2_99
+  - first:
+      213: 2365258482334406340
+    second: RTS_medieval@2_100
+  - first:
+      213: 7433126681112525509
+    second: RTS_medieval@2_101
+  - first:
+      213: -8699903415777107771
+    second: RTS_medieval@2_102
+  - first:
+      213: 9054374119614683055
+    second: RTS_medieval@2_103
+  - first:
+      213: -7837698803512587496
+    second: RTS_medieval@2_104
+  - first:
+      213: -6334054605833447468
+    second: RTS_medieval@2_105
+  - first:
+      213: -3997162509606285823
+    second: RTS_medieval@2_106
+  - first:
+      213: 494018345108938219
+    second: RTS_medieval@2_107
+  - first:
+      213: -6961635192942279611
+    second: RTS_medieval@2_108
+  - first:
+      213: -3811849192645052961
+    second: RTS_medieval@2_109
+  - first:
+      213: -3025566085667232883
+    second: RTS_medieval@2_110
+  - first:
+      213: -3224886627937047658
+    second: RTS_medieval@2_111
+  - first:
+      213: 5144418779006725171
+    second: RTS_medieval@2_112
+  - first:
+      213: -8369382761199147251
+    second: RTS_medieval@2_113
+  - first:
+      213: -8380008707298726246
+    second: RTS_medieval@2_114
+  - first:
+      213: -9000435247761556880
+    second: RTS_medieval@2_115
+  - first:
+      213: 2815887814579627226
+    second: RTS_medieval@2_116
+  - first:
+      213: -1401015729671499130
+    second: RTS_medieval@2_117
+  - first:
+      213: 2110594083334987213
+    second: RTS_medieval@2_118
+  - first:
+      213: 2492327329075725306
+    second: RTS_medieval@2_119
+  - first:
+      213: -5905329418722662790
+    second: RTS_medieval@2_120
+  - first:
+      213: -2218198966514975133
+    second: RTS_medieval@2_121
+  - first:
+      213: -7378668833788811833
+    second: RTS_medieval@2_122
+  - first:
+      213: -6528412336524372062
+    second: RTS_medieval@2_123
+  - first:
+      213: -2246815244687402028
+    second: RTS_medieval@2_124
+  - first:
+      213: -8978146151245626038
+    second: RTS_medieval@2_125
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RTS_medieval@2_0
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 1215
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f3ccbf696315cd4492f47e2497120ae
+      internalID: -730100288125635459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_1
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 1215
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3f9cedb744c73b469b09f8127d5ca21
+      internalID: 1086783647822359178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_2
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 1215
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 836db8e34bee69e48804b7c440a89cbf
+      internalID: -8223888522509754171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_3
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 1215
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d442c195f2c64f14680fb8e269b3b709
+      internalID: -3055401472402145613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_4
+      rect:
+        serializedVersion: 2
+        x: 829
+        y: 1215
+        width: 133
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89e42660af81cf84faf59eefd16bfaeb
+      internalID: -5221642237017938455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_5
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 1215
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43543c55329f07f4d998e099e8f33c4e
+      internalID: 4534640832196463326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_6
+      rect:
+        serializedVersion: 2
+        x: 1214
+        y: 1215
+        width: 133
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40e9e4c4c45ec6646b0cd3e2916ff693
+      internalID: -5868241393608159542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_7
+      rect:
+        serializedVersion: 2
+        x: 1405
+        y: 1215
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d87edaf5699199e408fe259d2170483b
+      internalID: -8733742038249469284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_8
+      rect:
+        serializedVersion: 2
+        x: 1598
+        y: 1215
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fac521a83e3ca644cb824a938eacfd47
+      internalID: 4625306433555912779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_9
+      rect:
+        serializedVersion: 2
+        x: 1824
+        y: 1215
+        width: 64
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3486e3be185dd7e40a49e2e283e4af9d
+      internalID: 3784413022584779671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_10
+      rect:
+        serializedVersion: 2
+        x: 1983
+        y: 1248
+        width: 132
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20bd7e6f43560c5438cf143d46360904
+      internalID: -3151152826728203068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_11
+      rect:
+        serializedVersion: 2
+        x: 2173
+        y: 1215
+        width: 133
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ebcc6f7502a459408ce85983d142588
+      internalID: -7034178006129912602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_12
+      rect:
+        serializedVersion: 2
+        x: 2366
+        y: 1215
+        width: 132
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cfac8e7e63672445bb187bc498a627b
+      internalID: -8132751026731055030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_13
+      rect:
+        serializedVersion: 2
+        x: 2558
+        y: 1248
+        width: 133
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a960067f3e58b3949a131562e35add96
+      internalID: -6153184113562294778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_14
+      rect:
+        serializedVersion: 2
+        x: 2770
+        y: 1215
+        width: 93
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8664522178c68724d8ee44c1d6999ea6
+      internalID: -4147054728263199701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_15
+      rect:
+        serializedVersion: 2
+        x: 2969
+        y: 1215
+        width: 77
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e813b6d283ef4f542b03287b05a46c46
+      internalID: -3130654362534477834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_16
+      rect:
+        serializedVersion: 2
+        x: 3138
+        y: 1215
+        width: 123
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce1212857c8c8d74e8cc4dc5d248673e
+      internalID: -8743592249306041209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_17
+      rect:
+        serializedVersion: 2
+        x: 3339
+        y: 1215
+        width: 108
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1acb3f392a953e4c9f404fccca99b39
+      internalID: -7213424425299681046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_18
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 1022
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcb01074525ef3141be3f6ab62278e3f
+      internalID: -2503936262394839839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_19
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 1022
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 956fdd7e2552abd418730619228d153b
+      internalID: 7879457391367873932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_20
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 1022
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 759146bcb3e27274a8228f903fb3380b
+      internalID: -3541834622323829016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_21
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 1022
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b16d4a16daee62943b16b34dcb1e2f7e
+      internalID: -3636977471343087293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_22
+      rect:
+        serializedVersion: 2
+        x: 829
+        y: 1022
+        width: 133
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03e95620e158c1f42ab56d0eefb3d7eb
+      internalID: -7551075211332358335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_23
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 1022
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a91fd19beba313c479e53ee5bd3548a0
+      internalID: -6229460234617728499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_24
+      rect:
+        serializedVersion: 2
+        x: 1214
+        y: 1022
+        width: 133
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2782d79d76f2df45b0e1ce926a86555
+      internalID: -5340369211581611182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_25
+      rect:
+        serializedVersion: 2
+        x: 1405
+        y: 1022
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 132863bee712e49468bc186a95f9b073
+      internalID: -2036212386645575834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_26
+      rect:
+        serializedVersion: 2
+        x: 1598
+        y: 1022
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e6d02b155cd26a42b0bcab783d468ee
+      internalID: 6458952519893294719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_27
+      rect:
+        serializedVersion: 2
+        x: 1825
+        y: 1022
+        width: 97
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47dfe0dfa2b769148958b31a30ad5d7c
+      internalID: 509550879037499524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_28
+      rect:
+        serializedVersion: 2
+        x: 1983
+        y: 1022
+        width: 89
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a005956e3faad5543b12f9fbad1644f4
+      internalID: 7113538930650831388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_29
+      rect:
+        serializedVersion: 2
+        x: 2173
+        y: 1050
+        width: 105
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e122ca780efe9724f9032f4a69dbef44
+      internalID: -4557111500465654064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_30
+      rect:
+        serializedVersion: 2
+        x: 2366
+        y: 1022
+        width: 98
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5660f57d3cdd6a146a3a31573084c9c3
+      internalID: -8381106119904367951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_31
+      rect:
+        serializedVersion: 2
+        x: 2591
+        y: 1022
+        width: 100
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82eb020d0df306045a44c0a749c0abd9
+      internalID: 656708242795963553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_32
+      rect:
+        serializedVersion: 2
+        x: 2770
+        y: 1077
+        width: 93
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c940119a77ef0a64dba8254a6b672b53
+      internalID: 134106429331119553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_33
+      rect:
+        serializedVersion: 2
+        x: 2962
+        y: 1065
+        width: 91
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a02f28f4b6fb8a4881ec91059f1c84e
+      internalID: 5758353508231783875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_34
+      rect:
+        serializedVersion: 2
+        x: 3138
+        y: 1074
+        width: 123
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39b10d152f6d38f45bf970b58e5497ad
+      internalID: 8344326340976807322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_35
+      rect:
+        serializedVersion: 2
+        x: 3339
+        y: 1082
+        width: 108
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15958800d78783546ad5c0735dc9a431
+      internalID: 5047260665697350640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_36
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 830
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffbe456abe3f4294188947132d2f3f6b
+      internalID: -8058465657368014882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_37
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 830
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e6183d968d8c9748903f346cbbd61cc
+      internalID: 5094330715482595348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_38
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 830
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d0105dde575e7a45b8c260477c9898f
+      internalID: 19678382450290332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_39
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 830
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cdaaa3e38680d447b62789a5198aa81
+      internalID: -1768809774793793713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_40
+      rect:
+        serializedVersion: 2
+        x: 829
+        y: 830
+        width: 133
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa98be728f4b303428864011a65e195e
+      internalID: 1149008071826741358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_41
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 830
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52f18d61300ca38429bfaf25d4376e87
+      internalID: -8358397607224773051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_42
+      rect:
+        serializedVersion: 2
+        x: 1214
+        y: 830
+        width: 133
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32dddef00c64aa7409cee45bcb08b730
+      internalID: -484265556908112515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_43
+      rect:
+        serializedVersion: 2
+        x: 1405
+        y: 830
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6fcbf689847ff44bb7d247be09491c2
+      internalID: 5942490959377587896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_44
+      rect:
+        serializedVersion: 2
+        x: 1598
+        y: 830
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 301e30077e2b2894db7f6696a566abef
+      internalID: -7536498660030301779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_45
+      rect:
+        serializedVersion: 2
+        x: 1832
+        y: 864
+        width: 90
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c9aca39ae9578a49af286a4fc1c8e34
+      internalID: 5836409563368825845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_46
+      rect:
+        serializedVersion: 2
+        x: 1983
+        y: 873
+        width: 97
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b343c2146af55f4ab28ba132e9045c1
+      internalID: -3271295092334569819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_47
+      rect:
+        serializedVersion: 2
+        x: 2203
+        y: 859
+        width: 103
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6f1cb35dfe17da4abd52f59cf4e2d94
+      internalID: -1612883915679594851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_48
+      rect:
+        serializedVersion: 2
+        x: 2394
+        y: 859
+        width: 76
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50d806dab63f043438c37ab32b590b26
+      internalID: -6370300945529733233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_49
+      rect:
+        serializedVersion: 2
+        x: 2586
+        y: 830
+        width: 75
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 046fab232b9898745bad7ddb79755482
+      internalID: -5085404942661939862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_50
+      rect:
+        serializedVersion: 2
+        x: 2782
+        y: 854
+        width: 69
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdca1a2b2c21e1449b224b73dc5cec38
+      internalID: 6461198350511160410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_51
+      rect:
+        serializedVersion: 2
+        x: 2950
+        y: 835
+        width: 115
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34ed0b8590c2d094ca1c8ecddb9dafc7
+      internalID: 6753778741073851084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_52
+      rect:
+        serializedVersion: 2
+        x: 3155
+        y: 830
+        width: 91
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c74d9d1abe22364c88c361dde00d8ab
+      internalID: -8264385356409226980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_53
+      rect:
+        serializedVersion: 2
+        x: 3346
+        y: 878
+        width: 92
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 460d5e38b8ecd3e4db0ec463121f72e1
+      internalID: 6759850744859138396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_54
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 639
+        width: 132
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99ccfa46dd1ee984bbadec3f0e7db24a
+      internalID: -556118313800811176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_55
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 639
+        width: 132
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13b5b049883f2404fb5e1ce4e07754be
+      internalID: -1415417223570822499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_56
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 639
+        width: 132
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 475be3652cf7a974d96559896ec6045c
+      internalID: 778087837257136957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_57
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 639
+        width: 132
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb3779e42d422c94d9978238d72f6252
+      internalID: 6922640578579055174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_58
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 654
+        width: 33
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f29c5a03b5f1c7841b06b4b1c48dcbdd
+      internalID: -7258931191175352897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_59
+      rect:
+        serializedVersion: 2
+        x: 1068
+        y: 654
+        width: 41
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b94c83b80a5d6f64fac1bef527e345af
+      internalID: 1824928745428258137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_60
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 654
+        width: 40
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4a2129474e5ce342840d8a2d6aee456
+      internalID: -6983012190488632922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_61
+      rect:
+        serializedVersion: 2
+        x: 1443
+        y: 654
+        width: 57
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88dff33c8d7934a4a96d8cc87ad31455
+      internalID: -3381903629031533044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_62
+      rect:
+        serializedVersion: 2
+        x: 1648
+        y: 656
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c6eeaf5727c5d84fbb9c4ab85413336
+      internalID: 7129598175556369529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_63
+      rect:
+        serializedVersion: 2
+        x: 1818
+        y: 685
+        width: 77
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c09afca0870f2af45bc2b5e23e41fcba
+      internalID: 9176636359420830794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_64
+      rect:
+        serializedVersion: 2
+        x: 2026
+        y: 666
+        width: 44
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f20100218e18104083691c74d73185a
+      internalID: 5380709053851162247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_65
+      rect:
+        serializedVersion: 2
+        x: 2222
+        y: 678
+        width: 37
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70d297756fc3f204fb2aa6bb6daec11d
+      internalID: -6011161016835228539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_66
+      rect:
+        serializedVersion: 2
+        x: 2414
+        y: 678
+        width: 36
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c0f33eeaa856294ca03c39dd63e85b5
+      internalID: -6668545130738482440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_67
+      rect:
+        serializedVersion: 2
+        x: 2601
+        y: 678
+        width: 45
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ad4fe9f86ca685478798f12372b6c4b
+      internalID: 2217946122627970240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_68
+      rect:
+        serializedVersion: 2
+        x: 2796
+        y: 678
+        width: 41
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85cc8d844bc2c7e4995a9531fa5bae18
+      internalID: 6299004766935064703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_69
+      rect:
+        serializedVersion: 2
+        x: 2986
+        y: 678
+        width: 44
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f07e0a3e424e0b4086b5bdc330f547b
+      internalID: 1393448601001536536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_70
+      rect:
+        serializedVersion: 2
+        x: 3182
+        y: 678
+        width: 36
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fcf4ed6c780e0944b45fe05cad29703
+      internalID: 3740511475120258559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_71
+      rect:
+        serializedVersion: 2
+        x: 3339
+        y: 649
+        width: 108
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cca4be2822ea72b4d843aa4e31dae5f9
+      internalID: 3926084611118714883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_72
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 446
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05859936fe00e0648a5958d418426bea
+      internalID: 8907107067430532193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_73
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 446
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e1d9a009c1b6044ab83a74d71ab7791
+      internalID: -7931344410939115632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_74
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 446
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7316ecca0ebf5b24580cd30e4e8779f9
+      internalID: -6937208429874386769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_75
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 446
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13d7e7edbed68744a93dadccc627c33b
+      internalID: 411220424465931126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_76
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 494
+        width: 41
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02d270da85772d447af0e356bbd2708b
+      internalID: -5401757774300699409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_77
+      rect:
+        serializedVersion: 2
+        x: 1054
+        y: 482
+        width: 67
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3448afd012b54348be4defa3652fd6c
+      internalID: 7077396769917492235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_78
+      rect:
+        serializedVersion: 2
+        x: 1240
+        y: 477
+        width: 81
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be8c779531d6ea543a0384d22399b2b3
+      internalID: -230323833089978747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_79
+      rect:
+        serializedVersion: 2
+        x: 1433
+        y: 474
+        width: 79
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cdc812eb8c05d240ac506396ef1563c
+      internalID: 2796034122687528804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_80
+      rect:
+        serializedVersion: 2
+        x: 1623
+        y: 474
+        width: 81
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f903f07461a7f44784980ee6196c672
+      internalID: 1599936576673124362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_81
+      rect:
+        serializedVersion: 2
+        x: 1816
+        y: 474
+        width: 81
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4eca8ff83a2a04e4690be37e5a4e9b66
+      internalID: -292200037773161127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_82
+      rect:
+        serializedVersion: 2
+        x: 2026
+        y: 488
+        width: 44
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1874828ed074ec43ac6f8c1c2790c29
+      internalID: 299424313056821395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_83
+      rect:
+        serializedVersion: 2
+        x: 2222
+        y: 486
+        width: 37
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a665032f0c52ddd4f80b404339743bac
+      internalID: 2738681656019124198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_84
+      rect:
+        serializedVersion: 2
+        x: 2414
+        y: 486
+        width: 36
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c74a6ad5e89d1bf45a0aaca68d5baf51
+      internalID: 5659369361713314012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_85
+      rect:
+        serializedVersion: 2
+        x: 2601
+        y: 486
+        width: 45
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c9598b3018edb54f88c139d22c692bf
+      internalID: -65575116922254399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_86
+      rect:
+        serializedVersion: 2
+        x: 2796
+        y: 486
+        width: 41
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 823848ae99ae75349bb7f7527bbf7fd1
+      internalID: 2992292391840909854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_87
+      rect:
+        serializedVersion: 2
+        x: 2986
+        y: 486
+        width: 44
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3f7683af0fa8634ab5e621b214e6920
+      internalID: -7695994273673767328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_88
+      rect:
+        serializedVersion: 2
+        x: 3182
+        y: 486
+        width: 36
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d5c98cb67ca1c64e91b9704550c81e9
+      internalID: 472577842669310397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_89
+      rect:
+        serializedVersion: 2
+        x: 3328
+        y: 446
+        width: 129
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7be73ae1c02dd547a71aa2abe37b860
+      internalID: 6030275870479518072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_90
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 252
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ebadefd179336748a465d8fad0d720b
+      internalID: -8163637813667040292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_91
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 252
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a0f907a0e4a72a4cb182c02e809153a
+      internalID: 3766598191810627093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_92
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 252
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff06c89dace684543a4c9d5403e22434
+      internalID: -5949159941904860711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_93
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 252
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bad9895524781a4c95d604496f02120
+      internalID: 5833367921090067671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_94
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 300
+        width: 41
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f906dfc38b682014589cf41289d08d99
+      internalID: 7119636100861762631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_95
+      rect:
+        serializedVersion: 2
+        x: 1054
+        y: 288
+        width: 67
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e93ed81b1ca2fef4da448b080f4a0b4d
+      internalID: 1655814789752226600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_96
+      rect:
+        serializedVersion: 2
+        x: 1240
+        y: 285
+        width: 81
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 645c9e697e318ed499bb273b919a7cdd
+      internalID: -6651681409455578642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_97
+      rect:
+        serializedVersion: 2
+        x: 1433
+        y: 279
+        width: 79
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0af5f1de40990a2448a686eadd3885df
+      internalID: 6741070306424969747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_98
+      rect:
+        serializedVersion: 2
+        x: 1623
+        y: 279
+        width: 81
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca6e1b3da137a8f4c94627b2916ad050
+      internalID: -3039786808657108903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_99
+      rect:
+        serializedVersion: 2
+        x: 1816
+        y: 279
+        width: 81
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec703cca71a9f614e99baab5324f1e77
+      internalID: -3244139519589747376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_100
+      rect:
+        serializedVersion: 2
+        x: 2026
+        y: 297
+        width: 44
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3afcecefcdef30f4f8f98cb5fdc810d3
+      internalID: 2365258482334406340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_101
+      rect:
+        serializedVersion: 2
+        x: 2222
+        y: 293
+        width: 37
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa1ef9af9d3406742a1849533a184be0
+      internalID: 7433126681112525509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_102
+      rect:
+        serializedVersion: 2
+        x: 2414
+        y: 293
+        width: 36
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c72c177ff402ee143822f20445f6f630
+      internalID: -8699903415777107771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_103
+      rect:
+        serializedVersion: 2
+        x: 2601
+        y: 293
+        width: 45
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02dfeffa5f2c5b340a577f0c2f3bb30a
+      internalID: 9054374119614683055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_104
+      rect:
+        serializedVersion: 2
+        x: 2796
+        y: 293
+        width: 41
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44c641112890f8046b9494471269b111
+      internalID: -7837698803512587496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_105
+      rect:
+        serializedVersion: 2
+        x: 2986
+        y: 293
+        width: 44
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd2da4b3865280a4597b3ecac81188b5
+      internalID: -6334054605833447468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_106
+      rect:
+        serializedVersion: 2
+        x: 3182
+        y: 293
+        width: 36
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66dcfa399b8a0634082d7317e0cd9d69
+      internalID: -3997162509606285823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_107
+      rect:
+        serializedVersion: 2
+        x: 3327
+        y: 255
+        width: 130
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1f68fd50a8b802428611da5f9ac6e88
+      internalID: 494018345108938219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_108
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 61
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57e8d6f46252e9e4fb4f7bf5ed3b38aa
+      internalID: -6961635192942279611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_109
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 61
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de2ca3a22e6859644847a7f80b1b94a7
+      internalID: -3811849192645052961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_110
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 61
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c7b36698acb1224ba39e3a93546bea5
+      internalID: -3025566085667232883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_111
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 61
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 696d1ac65e92ca04998b917074d96fee
+      internalID: -3224886627937047658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_112
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 66
+        width: 93
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 560f82f4d6db55d47a372e80f1644b2b
+      internalID: 5144418779006725171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_113
+      rect:
+        serializedVersion: 2
+        x: 1042
+        y: 66
+        width: 92
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca8b2a93d1ab8894da20eb7cc5cddbba
+      internalID: -8369382761199147251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_114
+      rect:
+        serializedVersion: 2
+        x: 1233
+        y: 78
+        width: 93
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf87de2454cfdf147801a56a78690a76
+      internalID: -8380008707298726246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_115
+      rect:
+        serializedVersion: 2
+        x: 1417
+        y: 66
+        width: 108
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2203b3b62cc534546a9375604a59e8af
+      internalID: -9000435247761556880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_116
+      rect:
+        serializedVersion: 2
+        x: 1610
+        y: 78
+        width: 108
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c760f3391ea40d48af1460c26e1920a
+      internalID: 2815887814579627226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_117
+      rect:
+        serializedVersion: 2
+        x: 1794
+        y: 66
+        width: 125
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 284af3d6749f6f44d954fc8f3c22237a
+      internalID: -1401015729671499130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_118
+      rect:
+        serializedVersion: 2
+        x: 2014
+        y: 85
+        width: 68
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e81118769fc42a2459f7ab6218939f36
+      internalID: 2110594083334987213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_119
+      rect:
+        serializedVersion: 2
+        x: 2222
+        y: 102
+        width: 37
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bd13126317c09a4b84f2aa653922d3d
+      internalID: 2492327329075725306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_120
+      rect:
+        serializedVersion: 2
+        x: 2414
+        y: 102
+        width: 36
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fee751e269fbc894ca8f8c56298fa0fa
+      internalID: -5905329418722662790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_121
+      rect:
+        serializedVersion: 2
+        x: 2601
+        y: 102
+        width: 45
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f83dc4f30a48d54180e1ff3d8dcf72e
+      internalID: -2218198966514975133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_122
+      rect:
+        serializedVersion: 2
+        x: 2796
+        y: 102
+        width: 41
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bcc7c33b4b22a24db8e1e586074d537
+      internalID: -7378668833788811833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_123
+      rect:
+        serializedVersion: 2
+        x: 2986
+        y: 102
+        width: 44
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee05624166b8ab74eb1ba9db2c280bc1
+      internalID: -6528412336524372062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_124
+      rect:
+        serializedVersion: 2
+        x: 3182
+        y: 102
+        width: 36
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19348918e0bc66f44bc916b5e3676951
+      internalID: -2246815244687402028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RTS_medieval@2_125
+      rect:
+        serializedVersion: 2
+        x: 3370
+        y: 94
+        width: 46
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8f04123553c321479e6b6dcee684543
+      internalID: -8978146151245626038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
