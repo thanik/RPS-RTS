@@ -18,9 +18,9 @@ public enum NetworkMessageType
     SERVERTIME, // server send time back
     SYNCTIME, // server send its network game time to client
     UPDATE, // updating delta game state to clients
-    INSTANTIATE, // new network object to clients
-    DESTROY, // destroy network object to clients
-    FULLUPDATE // server send full game state to client
+    FULLUPDATE, // server send full game state to client
+    UNITSACTIONS, // client send unit actions to server
+    GAMEOVER
 }
 
 [MessagePackObject]

@@ -8,6 +8,8 @@ using UnityEngine;
 public class NetworkClientManager : Singleton<NetworkClientManager>
 {
     public List<NetworkObject> netObjs = new List<NetworkObject>();
+    public List<NetworkObject> netObjsToBeRemoved = new List<NetworkObject>();
+    public List<NetworkObjectSnapshot> netObjsToBeInstantiated = new List<NetworkObjectSnapshot>();
     public List<NetworkClient> netClients = new List<NetworkClient>();
     public bool predictionEnabled = true;
     public int myClientID;
@@ -17,11 +19,17 @@ public class NetworkClientManager : Singleton<NetworkClientManager>
     private bool errorTrigger = false;
     private bool disconnectTrigger = false;
     private bool shuttingDown = false;
+    private bool fullUpdateTrigger = false;
+    private bool snapshotUpdateTrigger = false;
     private string errorString = "";
     private UdpClient udpClient;
     private IPEndPoint endPoint;
     private Coroutine sendTimestampCoroutine;
+    private SnapshotUpdatePayload fullUpdatePayload = null;
+    private SnapshotUpdatePayload snapshotPayload = null;
+    private int maxObjectID = 0;
 
+    public float lastSnapshotTime = 0f;
     public float networkGameTime = 0;
     public float timeDelta, latency, roundTrip;
     public int bytesIn, bytesOut;
@@ -48,7 +56,10 @@ public class NetworkClientManager : Singleton<NetworkClientManager>
 
         if (errorTrigger)
         {
-            GameObject.Find("PageManager").GetComponent<PageManager>().showError(errorString);
+            if (GameManagement.Instance.gameState == NetworkGameState.LOBBY)
+            {
+                GameObject.Find("PageManager").GetComponent<PageManager>().showError(errorString);
+            }
             errorTrigger = false;
         }
 
@@ -59,8 +70,37 @@ public class NetworkClientManager : Singleton<NetworkClientManager>
             networkGameTime = 0f;
             netObjs.Clear();
             netClients.Clear();
-            GameObject.Find("PageManager").GetComponent<PageManager>().changePage(0);
+            if (GameManagement.Instance.gameState == NetworkGameState.LOBBY)
+            {
+                GameObject.Find("PageManager").GetComponent<PageManager>().changePage(0);
+            }
             disconnectTrigger = false;
+        }
+
+        if(fullUpdateTrigger)
+        {
+            fullUpdate();
+            fullUpdateTrigger = false;
+        }
+
+        if(snapshotUpdateTrigger)
+        {
+            ProcessSnapshots(snapshotPayload.gameTime, snapshotPayload.maxObjectID, snapshotPayload.netObjects, snapshotPayload.totalObjectCount);
+            GameManagement.Instance.playerData = snapshotPayload.playerData;
+            snapshotUpdateTrigger = false;
+        }
+
+        foreach (NetworkObject removingObject in netObjsToBeRemoved)
+        {
+            if (removingObject)
+            {
+                netObjs.Remove(removingObject);
+                if (removingObject.gameObject.TryGetComponent<StatusBarManager>(out StatusBarManager statusBarManager))
+                {
+                    Destroy(statusBarManager.statusBar);
+                }
+                Destroy(removingObject.gameObject);
+            }
         }
     }
 
@@ -87,6 +127,7 @@ public class NetworkClientManager : Singleton<NetworkClientManager>
                 else if (receivedMsg.msgType == NetworkMessageType.ERROR && receivedMsg.payload is ErrorPayload)
                 {
                     ErrorPayload payload = (ErrorPayload)receivedMsg.payload;
+                    Debug.Log("Got error from server: " + payload.errorString);
                     errorTrigger = true;
                     errorString = payload.errorString;
                 }
@@ -109,6 +150,20 @@ public class NetworkClientManager : Singleton<NetworkClientManager>
                 {
                     SyncTimePayload payload = (SyncTimePayload)receivedMsg.payload;
                     SyncClock(payload.serverTime);
+                }
+                else if (receivedMsg.msgType == NetworkMessageType.FULLUPDATE && receivedMsg.payload is SnapshotUpdatePayload)
+                {
+                    Debug.Log("Got full update data.");
+                    fullUpdatePayload = (SnapshotUpdatePayload)receivedMsg.payload;
+                    lastSnapshotTime = ((SnapshotUpdatePayload)receivedMsg.payload).gameTime;
+                    fullUpdateTrigger = true;
+                }
+                else if (receivedMsg.msgType == NetworkMessageType.UPDATE && receivedMsg.payload is SnapshotUpdatePayload)
+                {
+                    snapshotPayload = (SnapshotUpdatePayload)receivedMsg.payload;
+                    lastSnapshotTime = ((SnapshotUpdatePayload)receivedMsg.payload).gameTime;
+                    snapshotUpdateTrigger = true;
+
                 }
                 else if (receivedMsg.msgType == NetworkMessageType.SHUTDOWN)
                 {
@@ -177,7 +232,7 @@ public class NetworkClientManager : Singleton<NetworkClientManager>
     {
         if (isConnected)
         {
-            byte[] sendBytes = NetworkMessageEncoderDecoder.Encode(new NetworkMessage(NetworkMessageType.CLIENTTIME, new ClientTimePayload { clientTime = networkGameTime }));
+            byte[] sendBytes = NetworkMessageEncoderDecoder.Encode(new NetworkMessage(NetworkMessageType.CLIENTTIME, new ClientTimePayload { clientTime = networkGameTime, latency = latency }));
             udpClient.BeginSend(sendBytes, sendBytes.Length, endPoint, new AsyncCallback(SendCallback), null);
         }
         yield return new WaitForSeconds(5f);
@@ -215,6 +270,113 @@ public class NetworkClientManager : Singleton<NetworkClientManager>
         {
             byte[] sendBytes = NetworkMessageEncoderDecoder.Encode(new NetworkMessage(NetworkMessageType.READY, null));
             udpClient.BeginSend(sendBytes, sendBytes.Length, endPoint, new AsyncCallback(SendCallback), null);
+        }
+    }
+
+    public void sendUnitsActions(List<NetworkActionSnapshot> actions, NetworkUnitType unitType)
+    {
+        bool addRockTrainingQueue = false;
+        bool addPaperTrainingQueue = false;
+        bool addScissorsTrainingQueue = false;
+        switch (unitType)
+        {
+            case NetworkUnitType.PAPER:
+                addPaperTrainingQueue = true;
+                break;
+            case NetworkUnitType.ROCK:
+                addRockTrainingQueue = true;
+                break;
+            case NetworkUnitType.SCISSORS:
+                addScissorsTrainingQueue = true;
+                break;
+        }
+        GameManagement.Instance.playerData.TryGetValue(myClientID, out PlayerData myPlayerData);
+        byte[] sendBytes = NetworkMessageEncoderDecoder.Encode(new NetworkMessage(NetworkMessageType.UNITSACTIONS, new UnitsActionsPayload { addPaperTrainingQueue = addPaperTrainingQueue, addRockTrainingQueue = addRockTrainingQueue, addScissorsTrainingQueue = addScissorsTrainingQueue, actions = actions }));
+        udpClient.BeginSend(sendBytes, sendBytes.Length, endPoint, new AsyncCallback(SendCallback), null);
+    }
+
+    private void fullUpdate()
+    {
+        if (fullUpdatePayload != null)
+        {
+            Debug.Log("Start full updating! (" + fullUpdatePayload.netObjects.Count + ")");
+            float payloadTime = fullUpdatePayload.gameTime;
+            List<NetworkObjectSnapshot> newNetObjs = fullUpdatePayload.netObjects;
+            if (netObjs.Count == 0)
+            {
+                GameManagement.Instance.instantiateFromFullUpdate(newNetObjs, payloadTime);
+                foreach (NetworkObject netObj in netObjs)
+                {
+                    if (netObj.objectID > maxObjectID)
+                    {
+                        maxObjectID = netObj.objectID;
+                    }
+                }
+            }
+            else
+            {
+                // need to update all objs
+            }
+            GameManagement.Instance.playerData = fullUpdatePayload.playerData;
+        }
+    }
+
+    private void ProcessSnapshots(float snapshotTime, int newMaxObjectID, List<NetworkObjectSnapshot> snapshotObjects, int snapshotObjCount)
+    {
+        netObjsToBeRemoved.Clear();
+        foreach (NetworkObjectSnapshot snapObj in snapshotObjects)
+        {
+            foreach(NetworkObject netObj in netObjs)
+            {
+                
+                if (snapObj.objectID == netObj.objectID)
+                {
+                    //Debug.Log("Updating object: " + netObj.objectID + " " + snapObj.currentAction);
+                    netObj.cooldownTime = snapObj.cooldownTime;
+                    netObj.currentAction = snapObj.currentAction;
+                    netObj.health = snapObj.health;
+                    netObj.objectIDTarget = snapObj.objectIDTarget;
+                    netObj.objectLevel = snapObj.objectLevel;
+                    netObj.positionTarget = snapObj.positionTarget;
+
+                    if (netObj.positionQueue.Count > 2)
+                    {
+                        netObj.positionQueue.RemoveAt(2);
+                    }
+                    netObj.positionQueue.Insert(0, snapObj.currentPosition);
+
+                    if (netObj.networkTimeQueue.Count > 2)
+                    {
+                        netObj.networkTimeQueue.RemoveAt(2);
+                    }
+                    netObj.networkTimeQueue.Insert(0, snapshotTime);
+                    netObj.lastSnapshotTime = snapshotTime;
+                    if (snapObj.snapshotAction == SnapshotAction.DESTROY)
+                    {
+                        netObjsToBeRemoved.Add(netObj);
+                    }
+                }
+            }
+
+            if (snapObj.objectID > maxObjectID)
+            {
+                netObjsToBeInstantiated.Add(snapObj);
+
+            }
+        }
+
+        foreach (NetworkObjectSnapshot netObjSnap in netObjsToBeInstantiated)
+        {
+            GameManagement.Instance.instantiateFromSnapshot(netObjSnap, snapshotTime);
+        }
+        netObjsToBeInstantiated.Clear();
+        
+
+        maxObjectID = newMaxObjectID;
+
+        if(snapshotObjCount - netObjsToBeRemoved.Count != netObjs.Count)
+        {
+            Debug.LogWarning("Object Count OUT OF SYNC DETECTED current: " + netObjs.Count + " expected: " + (snapshotObjCount - netObjsToBeRemoved.Count));
         }
     }
 }

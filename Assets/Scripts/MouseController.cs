@@ -1,15 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class MouseController : MonoBehaviour
 {
     public float scrollSpeed = 25;
     public int scrollWidth = 15;
-    public float minPositionX = -12f;
-    public float maxPositionX = 12f;
-    public float minPositionY = -9f;
-    public float maxPositionY = 9f;
+    public float maxBaseMinZoomPositionX = 12.5f;
+    public float maxBaseMinZoomPositionY = 9f;
+
+    public float maxBaseMaxZoomPositionX = 3.4f;
+    public float maxBaseMaxZoomPositionY = 4.15f;
+
+    public float minSizeZoom = 5f;
+    public float maxSizeZoom = 10f;
 
     public List<GameObject> selectedObjects = new List<GameObject>();
     public List<GameObject> unitObjects = new List<GameObject>();
@@ -23,20 +28,59 @@ public class MouseController : MonoBehaviour
     private LayerMask groundMask;
     private Ray ray;
     private GameObject tempGameObject;
+    private float minPositionX = -12f;
+    private float maxPositionX = 12f;
+    private float minPositionY = -9f;
+    private float maxPositionY = 9f;
+    public Vector3 startCameraPosition;
     void Start()
     {
         selectSquareImage.gameObject.SetActive(false);
         unitMask = LayerMask.GetMask("Unit");
         groundMask = LayerMask.GetMask("Ground");
+
+        // change camera position to player position
+        if (GameManagement.Instance.gameMode == GameMode.CLIENT)
+        {
+            switch (NetworkClientManager.Instance.myClientID)
+            {
+                case 0:
+                    startCameraPosition = new Vector3(minPositionX, maxPositionY, -10f);
+                    break;
+                case 1:
+                    startCameraPosition = new Vector3(minPositionX, minPositionY, -10f);
+                    break;
+                case 2:
+                    startCameraPosition = new Vector3(maxPositionX, maxPositionY, -10f);
+                    break;
+                case 3:
+                    startCameraPosition = new Vector3(maxPositionX, minPositionY, -10f);
+                    break;
+
+            }
+            Camera.main.transform.position = startCameraPosition;
+        }
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        // gather all my units
+        unitObjects.Clear();
+        foreach (NetworkObject netObj in NetworkClientManager.Instance.netObjs)
+        {
+            if (NetworkClientManager.Instance.myClientID == netObj.clientOwnerID && netObj.objectType == NetworkObjectType.UNIT)
+            {
+                unitObjects.Add(netObj.gameObject);
+            }
+        }
+
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit2D rayHit = Physics2D.Raycast(ray.origin, ray.direction, Mathf.Infinity, unitMask);
         hover(rayHit);
         select(rayHit);
+        doAction(rayHit);
         selectionBox();
         if (!Input.GetMouseButton(0))
             MoveCamera();
@@ -63,11 +107,6 @@ public class MouseController : MonoBehaviour
 
     private void select(RaycastHit2D rayHit)
     {
-        if (Input.GetMouseButtonDown(1))
-        {
-            ClearSelection();
-        }
-
         if (Input.GetMouseButtonDown(0))
         {
             startViewportPos = Camera.main.ScreenToViewportPoint(Input.mousePosition);
@@ -108,33 +147,95 @@ public class MouseController : MonoBehaviour
             {
                 SelectObjects();
             }
-            else
+            else if (!rayHit.collider)
             {
-                if (selectedObjects.Count > 0)
+                ClearSelection();
+            }
+        }
+    }
+
+    private void doAction(RaycastHit2D rayHit)
+    {
+        if (Input.GetMouseButtonDown(1))
+        {
+            List<NetworkActionSnapshot> actions = new List<NetworkActionSnapshot>();
+            Vector3 positionClicked = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            positionClicked.z = 0f;
+            Debug.Log("Position clicked: " + positionClicked);
+            if (rayHit.collider)
+            {
+                Debug.Log("Action do on unit");
+                Debug.Log(rayHit.collider.gameObject.GetComponent<NetworkObject>().objectID);
+                foreach (GameObject selectedObj in selectedObjects)
                 {
-                    Debug.Log("Action clicked");
-                    rayHit = Physics2D.Raycast(ray.origin, ray.direction, Mathf.Infinity);
-                    if (rayHit.collider)
+                    if (selectedObj)
                     {
-                        Debug.Log(rayHit.collider.gameObject);
-                        if (rayHit.collider.gameObject.layer == groundMask)
+                        NetworkObject selectedNetworkObj = selectedObj.GetComponent<NetworkObject>();
+                        if (selectedNetworkObj.objectType == NetworkObjectType.UNIT)
                         {
-                            Debug.Log("Ground clicked");
-                        }
-                        else if (rayHit.collider.gameObject.layer == unitMask)
-                        {
-                            Debug.Log("Unit clicked");
-                        }
-                        foreach (GameObject selected in selectedObjects)
-                        {
-                            NetworkObject netObj = selected.GetComponent<NetworkObject>();
-                            if (netObj.objectType == NetworkObjectType.UNIT)
+                            //selectedObj.GetComponent<NavMeshAgent>().SetDestination(positionClicked);
+                            //selectedNetworkObj.positionTarget = positionClicked;
+                            //selectedNetworkObj.objectIDTarget = rayHit.collider.gameObject.GetComponent<NetworkObject>().objectID;
+
+
+                            NetworkActionSnapshot newActionSnapshot = new NetworkActionSnapshot()
                             {
-                                // TODO: do something
+                                objectID = selectedNetworkObj.objectID,
+                                objectIDTarget = rayHit.collider.gameObject.GetComponent<NetworkObject>().objectID,
+                                positionTarget = positionClicked
+                            };
+                            if (rayHit.collider.gameObject.GetComponent<NetworkObject>().clientOwnerID != selectedNetworkObj.clientOwnerID)
+                            {
+                                //selectedNetworkObj.currentAction = NetworkObjectAction.WALKTHENATTACK;
+                                newActionSnapshot.action = NetworkObjectAction.WALKTHENATTACK;
                             }
+                            else
+                            {
+                                //selectedNetworkObj.currentAction = NetworkObjectAction.WALKING;
+                                newActionSnapshot.action = NetworkObjectAction.WALKING;
+                            }
+
+                            actions.Add(newActionSnapshot);
+
+
                         }
                     }
                 }
+
+                
+            }
+            else
+            {
+                Debug.Log("Action do on ground");
+                foreach(GameObject selectedObj in selectedObjects)
+                {
+                    if (selectedObj)
+                    {
+                        NetworkObject selectedNetworkObj = selectedObj.GetComponent<NetworkObject>();
+                        if (selectedNetworkObj.objectType == NetworkObjectType.UNIT)
+                        {
+                            //selectedNetworkObj.currentAction = NetworkObjectAction.WALKING;
+                            //selectedNetworkObj.positionTarget = positionClicked;
+                            //selectedObj.GetComponent<NavMeshAgent>().SetDestination(positionClicked);
+
+                            NetworkActionSnapshot newActionSnapshot = new NetworkActionSnapshot()
+                            {
+                                objectID = selectedNetworkObj.objectID,
+                                objectIDTarget = 0,
+                                positionTarget = positionClicked,
+                                action = NetworkObjectAction.WALKING
+                            };
+
+                            actions.Add(newActionSnapshot);
+                        }
+                    }
+                }
+            }
+
+            if (actions.Count > 0)
+            {
+                NetworkClientManager.Instance.sendUnitsActions(actions, NetworkUnitType.NONE);
+                actions.Clear();
             }
         }
     }
@@ -180,7 +281,7 @@ public class MouseController : MonoBehaviour
         }
     }
 
-    private void ClearSelection()
+    public void ClearSelection()
     {
         if (selectedObjects.Count > 0)
         {
@@ -264,6 +365,27 @@ public class MouseController : MonoBehaviour
         destination.x += movement.x;
         destination.y += movement.y;
 
+        // zoom
+        if (Input.GetAxis("Mouse ScrollWheel") < 0)
+        {
+            Camera.main.orthographicSize += 1f;
+            if (Camera.main.orthographicSize > maxSizeZoom)
+            {
+                Camera.main.orthographicSize = maxSizeZoom;
+            }
+            calculateMaxXY();
+        }
+
+        if (Input.GetAxis("Mouse ScrollWheel") > 0)
+        {
+            Camera.main.orthographicSize += -1f;
+            if (Camera.main.orthographicSize < minSizeZoom)
+            {
+                Camera.main.orthographicSize = minSizeZoom;
+            }
+            calculateMaxXY();
+        }
+
         if (destination.x < minPositionX)
         {
             destination.x = minPositionX;
@@ -287,5 +409,13 @@ public class MouseController : MonoBehaviour
         {
             Camera.main.transform.position = Vector3.MoveTowards(origin, destination, Time.deltaTime * scrollSpeed);
         }
+    }
+    private void calculateMaxXY()
+    {
+        float zoomRatio = (Camera.main.orthographicSize - minSizeZoom) / (maxSizeZoom - minSizeZoom);
+        minPositionX = -(maxBaseMinZoomPositionX - (maxBaseMinZoomPositionX - maxBaseMaxZoomPositionX) * zoomRatio);
+        maxPositionX = (maxBaseMinZoomPositionX - (maxBaseMinZoomPositionX - maxBaseMaxZoomPositionX) * zoomRatio);
+        minPositionY = -(maxBaseMinZoomPositionY - (maxBaseMinZoomPositionY - maxBaseMaxZoomPositionY) * zoomRatio);
+        maxPositionY = (maxBaseMinZoomPositionY - (maxBaseMinZoomPositionY - maxBaseMaxZoomPositionY) * zoomRatio);
     }
 }

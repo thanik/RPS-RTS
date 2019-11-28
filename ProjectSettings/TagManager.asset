@@ -15,7 +15,7 @@ TagManager:
   - 
   - Unit
   - Ground
-  - 
+  - AutoAttack
   - 
   - 
   - 
@@ -52,4 +52,7 @@ TagManager:
     locked: 0
   - name: Projectile
     uniqueID: 3789939065
+    locked: 0
+  - name: LevelNumber
+    uniqueID: 3866218517
     locked: 0

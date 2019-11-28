@@ -7,6 +7,9 @@ using System.Collections.Generic;
 [MessagePack.Union(4, typeof(ServerTimePayload))]
 [MessagePack.Union(5, typeof(SyncTimePayload))]
 [MessagePack.Union(6, typeof(LobbyDataPayload))]
+[MessagePack.Union(7, typeof(UnitsActionsPayload))]
+[MessagePack.Union(8, typeof(SnapshotUpdatePayload))]
+[MessagePack.Union(9, typeof(GameOverPayload))]
 public interface INetworkPayload
 {
 }

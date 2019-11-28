@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 public class CountdownTimeText : MonoBehaviour
 {
     TMP_Text text;
+    public Button disconnectButton;
+    public Button readyButton;
     void Start()
     {
         text = GetComponent<TMP_Text>();
@@ -26,6 +29,14 @@ public class CountdownTimeText : MonoBehaviour
                 {
                     text.text = "";
                 }
+                disconnectButton.interactable = true;
+                readyButton.interactable = true;
+            }
+            else if((gameStartTime - NetworkClientManager.Instance.networkGameTime) < 0)
+            {
+                text.text = "Game is starting...";
+                disconnectButton.interactable = false;
+                readyButton.interactable = false;
             }
             else
             {

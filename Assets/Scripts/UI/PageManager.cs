@@ -40,4 +40,17 @@ public class PageManager : MonoBehaviour
     {
         errorDialog.SetActive(false);
     }
+
+    public void hideAllPage()
+    {
+        foreach (GameObject page in pages)
+        {
+            page.SetActive(false);
+        }
+    }
+
+    public void exitGame()
+    {
+        Application.Quit();
+    }
 }

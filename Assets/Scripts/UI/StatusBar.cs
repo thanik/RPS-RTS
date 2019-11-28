@@ -42,11 +42,11 @@ public class StatusBar : MonoBehaviour
         else if (mode == StatusBarMode.NOBG)
         {
             var tempColor = healthBar.color;
-            tempColor.a = 1f;
+            tempColor.a = 0.65f;
             healthBar.color = tempColor;
 
             tempColor = cooldownBar.color;
-            tempColor.a = 1f;
+            tempColor.a = 0.65f;
             cooldownBar.color = tempColor;
 
             tempColor = background.color;
@@ -56,15 +56,15 @@ public class StatusBar : MonoBehaviour
         else if (mode == StatusBarMode.WITHBG)
         {
             var tempColor = healthBar.color;
-            tempColor.a = 1f;
+            tempColor.a = 0.8f;
             healthBar.color = tempColor;
 
             tempColor = cooldownBar.color;
-            tempColor.a = 1f;
+            tempColor.a = 0.8f;
             cooldownBar.color = tempColor;
 
             tempColor = background.color;
-            tempColor.a = 1f;
+            tempColor.a = 0.8f;
             background.color = tempColor;
         }
     }

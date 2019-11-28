@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.AI;
 
 public class StatusBarManager : MonoBehaviour
 {
@@ -10,24 +11,27 @@ public class StatusBarManager : MonoBehaviour
     private Canvas canvas;
     private RectTransform canvasRect;
     private NetworkObject netObj;
-    private GameObject statusBar;
+    public GameObject statusBar;
     private int maxHealth;
     private float maxCooldown;
+    private bool hasLineRenderer = false;
+    private LineRenderer lineRenderer;
     void Start()
     {
         canvas = FindObjectOfType<Canvas>();
         canvasRect = canvas.GetComponent<RectTransform>();
         statusBar = Instantiate(statusBarPrefab, canvas.transform);
         netObj = GetComponent<NetworkObject>();
+        hasLineRenderer = TryGetComponent<LineRenderer>(out lineRenderer);
         GameManagement.Instance.maxHealth.TryGetValue(netObj.objectType, out maxHealth);
-        if (netObj.objectType == NetworkObjectType.BUILDING)
-        {
-            GameManagement.Instance.buildingActionCooldown.TryGetValue(netObj.objectLevel, out maxCooldown);
-        }
-        else
-        {
-            GameManagement.Instance.unitActionCooldown.TryGetValue(netObj.objectLevel, out maxCooldown);
-        }
+        //if (netObj.objectType == NetworkObjectType.BUILDING)
+        //{
+        //    maxCooldown = GameManagement.Instance.buildingActionCooldown[netObj.objectLevel];
+        //}
+        //else
+        //{
+        //    maxCooldown = GameManagement.Instance.unitActionCooldown[netObj.objectLevel];
+        //}
         OnClick();
     }
 
@@ -36,10 +40,30 @@ public class StatusBarManager : MonoBehaviour
     {
         if (statusBar)
         {
-
-            statusBar.GetComponent<StatusBar>().updateBar(netObj.health, maxHealth, netObj.cooldownTime, maxCooldown);
+            float offsetPosY;
+            if (netObj.currentAction == NetworkObjectAction.TRAINING)
+            {
+                maxCooldown = GameManagement.Instance.buildingActionCooldown[netObj.objectLevel];
+            }
+            else if(netObj.currentAction == NetworkObjectAction.UPGRADING)
+            {
+                maxCooldown = GameManagement.Instance.buildingUpgradingCooldown;
+            }
+            else if (netObj.currentAction == NetworkObjectAction.WALKTHENATTACK || netObj.currentAction == NetworkObjectAction.ATTACK || netObj.currentAction == NetworkObjectAction.GUARD)
+            {
+                maxCooldown = GameManagement.Instance.unitActionCooldown[netObj.objectLevel];
+            }
+            float cooldownTime = (netObj.cooldownTime == 0f) ? 0f : maxCooldown - (netObj.cooldownTime - NetworkClientManager.Instance.networkGameTime);
+            statusBar.GetComponent<StatusBar>().updateBar(netObj.health, maxHealth, cooldownTime, maxCooldown);
             // Offset position above object bbox (in world space)
-            float offsetPosY = transform.position.y + 0.5f;
+            if (netObj.objectType == NetworkObjectType.BUILDING)
+            {
+                offsetPosY = transform.position.y + 0.6f;
+            }
+            else
+            {
+                offsetPosY = transform.position.y + 0.45f;
+            }
 
             // Final position of marker above GO in world space
             Vector3 offsetPos = new Vector3(transform.position.x, offsetPosY, transform.position.z);
@@ -53,6 +77,22 @@ public class StatusBarManager : MonoBehaviour
 
             // Set
             statusBar.transform.localPosition = canvasPos;
+        }
+
+        if (hasLineRenderer)
+        {
+            if (currentlySelected)
+            {
+
+                Vector3[] corners = new Vector3[2] { transform.position, GetComponent<NetworkObject>().positionTarget };
+                lineRenderer.SetPositions(corners);
+                lineRenderer.positionCount = 2;
+
+            }
+            else
+            {
+                lineRenderer.positionCount = 0;
+            }
         }
     }
 
