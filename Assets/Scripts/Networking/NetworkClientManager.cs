@@ -21,6 +21,7 @@ public class NetworkClientManager : Singleton<NetworkClientManager>
     private bool shuttingDown = false;
     private bool fullUpdateTrigger = false;
     private bool snapshotUpdateTrigger = false;
+    private bool gameOverTrigger = false;
     private string errorString = "";
     private UdpClient udpClient;
     private IPEndPoint endPoint;
@@ -28,6 +29,7 @@ public class NetworkClientManager : Singleton<NetworkClientManager>
     private SnapshotUpdatePayload fullUpdatePayload = null;
     private SnapshotUpdatePayload snapshotPayload = null;
     private int maxObjectID = 0;
+    private int winClientID = -1;
 
     public float lastSnapshotTime = 0f;
     public float networkGameTime = 0;
@@ -88,6 +90,13 @@ public class NetworkClientManager : Singleton<NetworkClientManager>
             ProcessSnapshots(snapshotPayload.gameTime, snapshotPayload.maxObjectID, snapshotPayload.netObjects, snapshotPayload.totalObjectCount);
             GameManagement.Instance.playerData = snapshotPayload.playerData;
             snapshotUpdateTrigger = false;
+        }
+
+        if(gameOverTrigger)
+        {
+            GameManagement.Instance.showGameOverResult(winClientID == myClientID);
+            disconnect();
+            gameOverTrigger = false;
         }
 
         foreach (NetworkObject removingObject in netObjsToBeRemoved)
@@ -164,6 +173,12 @@ public class NetworkClientManager : Singleton<NetworkClientManager>
                     lastSnapshotTime = ((SnapshotUpdatePayload)receivedMsg.payload).gameTime;
                     snapshotUpdateTrigger = true;
 
+                }
+                else if (receivedMsg.msgType == NetworkMessageType.GAMEOVER && receivedMsg.payload is GameOverPayload)
+                {
+                    GameManagement.Instance.gameState = NetworkGameState.END;
+                    winClientID = ((GameOverPayload)receivedMsg.payload).winClientID;
+                    gameOverTrigger = true;
                 }
                 else if (receivedMsg.msgType == NetworkMessageType.SHUTDOWN)
                 {

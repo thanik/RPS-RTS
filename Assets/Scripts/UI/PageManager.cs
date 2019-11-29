@@ -48,9 +48,4 @@ public class PageManager : MonoBehaviour
             page.SetActive(false);
         }
     }
-
-    public void exitGame()
-    {
-        Application.Quit();
-    }
 }

@@ -138,10 +138,6 @@ public class NetworkManager : Singleton<NetworkManager>
         StartCoroutine(SendServerTimestamp());
     }
 
-    public void sendGameOverResult()
-    {
-
-    }
 
     public void ReceiveServerCallback(IAsyncResult ar)
     {

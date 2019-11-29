@@ -345,6 +345,37 @@ public class NetworkServerManager : Singleton<NetworkServerManager>
         StartCoroutine(SendServerTimestamp());
     }
 
+    public void sendGameOverResult(int winClientID)
+    {
+        List<NetworkObjectSnapshot> objSnaps = gatherDiffSnapshot();
+        //if (objSnaps.Count > 0)
+        //{
+        //    Debug.Log("Diff Update snapshot: " + objSnaps.Count);
+        //}
+
+        // calculate max object ID
+        int maxObjectID = 0;
+        foreach (NetworkObject netObj in netObjs)
+        {
+            if (netObj.objectID > maxObjectID)
+            {
+                maxObjectID = netObj.objectID;
+            }
+        }
+
+        byte[] sendBytes = NetworkMessageEncoderDecoder.Encode(new NetworkMessage(NetworkMessageType.UPDATE, new SnapshotUpdatePayload { gameTime = networkGameTime, netObjects = objSnaps, playerData = GameManagement.Instance.playerData, maxObjectID = maxObjectID, totalObjectCount = netObjs.Count })); ;
+        foreach (NetworkClient client in netClients)
+        {
+            udpClient.BeginSend(sendBytes, sendBytes.Length, (IPEndPoint)endPoint.Create(client.socketAddress), new AsyncCallback(SendCallback), null);
+        }
+
+        sendBytes = NetworkMessageEncoderDecoder.Encode(new NetworkMessage(NetworkMessageType.GAMEOVER, new GameOverPayload { winClientID = winClientID }));
+        foreach (NetworkClient client in netClients)
+        {
+            udpClient.BeginSend(sendBytes, sendBytes.Length, (IPEndPoint)endPoint.Create(client.socketAddress), new AsyncCallback(SendCallback), null);
+        }
+    }
+
     public int addNetworkObject(NetworkObject netObj)
     {
         if (netObjs.Contains(netObj))

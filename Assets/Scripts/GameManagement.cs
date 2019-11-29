@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using UnityEngine.SceneManagement;
 
 public enum GameMode
@@ -16,6 +17,7 @@ public class GameManagement : Singleton<GameManagement>
     public NetworkGameState gameState = NetworkGameState.LOBBY;
     public GameMode gameMode = GameMode.NONE;
     public float gameStartTime = 0f;
+    public float gameEndTime = 0f;
     public int minimumPlayers = 1;
     public List<Color> playerColorCode = new List<Color>();
     public Dictionary<NetworkObjectType, int> maxHealth = new Dictionary<NetworkObjectType, int>() {
@@ -60,6 +62,7 @@ public class GameManagement : Singleton<GameManagement>
 
     private GameObject buildingsGroup;
     private GameObject unitsGroup;
+    private GameObject gameOverPanel;
 
     // Start is called before the first frame update
     void Start()
@@ -75,6 +78,19 @@ public class GameManagement : Singleton<GameManagement>
             if (gameState == NetworkGameState.LOBBY && gameStartTime > 0 && (gameStartTime - NetworkClientManager.Instance.networkGameTime < 0))
             {
                 startGame();
+            }
+
+            if (gameState == NetworkGameState.PLAYING)
+            {
+                if (!gameOverPanel)
+                {
+                    gameOverPanel = GameObject.Find("GameResultPanel");
+                }
+                gameOverPanel.SetActive(false);
+            }
+            else if (gameState == NetworkGameState.END)
+            {
+                gameOverPanel.SetActive(true);
             }
         }
         else
@@ -133,16 +149,23 @@ public class GameManagement : Singleton<GameManagement>
                 }
             }
 
-            if (NetworkServerManager.Instance.netClients.Count - numberOfLosingPlayers == 1 && gameState == NetworkGameState.PLAYING)
+            if (NetworkServerManager.Instance.netClients.Count - numberOfLosingPlayers == 1 && gameState == NetworkGameState.PLAYING && gameEndTime == 0f)
+            {
+                gameEndTime = NetworkServerManager.Instance.networkGameTime + 1.25f;
+            }
+
+            if (gameEndTime > 0f && NetworkServerManager.Instance.networkGameTime > gameEndTime)
             {
                 gameState = NetworkGameState.END;
                 foreach (KeyValuePair<int, PlayerData> eachPlayerData in playerData)
                 {
                     if (eachPlayerData.Value.overallHealth > 0)
                     {
-
+                        NetworkServerManager.Instance.sendGameOverResult(eachPlayerData.Value.clientID);
                     }
+                    break;
                 }
+                NetworkServerManager.Instance.stopServer();
             }
         }
     }
@@ -309,6 +332,19 @@ public class GameManagement : Singleton<GameManagement>
             newGameObj.GetComponent<SpriteRenderer>().enabled = false;
         }
 
+    }
+
+    public void showGameOverResult(bool win)
+    {
+        gameOverPanel.SetActive(true);
+        if (win)
+        {
+            gameOverPanel.transform.Find("resultText").GetComponent<TMP_Text>().text = "You win!";
+        }
+        else
+        {
+            gameOverPanel.transform.Find("resultText").GetComponent<TMP_Text>().text = "You lose!";
+        }
     }
     #endregion
 
