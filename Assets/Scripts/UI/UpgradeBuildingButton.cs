@@ -18,132 +18,139 @@ public class UpgradeBuildingButton : MonoBehaviour
 
     void Update()
     {
-        if (GameManagement.Instance.playerData != null && GameManagement.Instance.playerData.TryGetValue(NetworkClientManager.Instance.myClientID, out PlayerData myPlayerData))
-        {
+        if (GameManagement.Instance.gameMode == GameMode.CLIENT)
+        { 
+            if (GameManagement.Instance.playerData != null && GameManagement.Instance.playerData.TryGetValue(NetworkClientManager.Instance.myClientID, out PlayerData myPlayerData))
+            {
 
-            if (unitType == NetworkUnitType.PAPER)
-            {
-                foreach (NetworkObject netObj in NetworkClientManager.Instance.netObjs)
+                if (unitType == NetworkUnitType.PAPER)
                 {
-                    if (netObj.objectID == myPlayerData.paperBuildingObjectID)
+                    foreach (NetworkObject netObj in NetworkClientManager.Instance.netObjs)
                     {
-                        if (netObj.health <= 0)
+                        if (netObj.objectID == myPlayerData.paperBuildingObjectID)
                         {
-                            button.interactable = false;
-                        }
-                        else
-                        {
-                            if (netObj.currentAction == NetworkObjectAction.NOTHING)
+                            if (netObj.health <= 0)
                             {
-                                if (netObj.objectLevel < 4)
+                                button.interactable = false;
+                            }
+                            else
+                            {
+                                if (netObj.currentAction == NetworkObjectAction.NOTHING)
                                 {
-                                    button.interactable = true;
-                                    buttonText.text = "U\nP";
+                                    if (netObj.objectLevel < 4)
+                                    {
+                                        button.interactable = true;
+                                        buttonText.text = "U\nP";
+                                    }
+                                    else
+                                    {
+                                        button.interactable = false;
+                                        buttonText.text = "M\nA\nX";
+                                    }
                                 }
-                                else
+                                else if (netObj.currentAction == NetworkObjectAction.TRAINING)
                                 {
                                     button.interactable = false;
-                                    buttonText.text = "M\nA\nX";
+                                    buttonText.text = "T..";
                                 }
-                            }
-                            else if (netObj.currentAction == NetworkObjectAction.TRAINING)
-                            {
-                                button.interactable = false;
-                                buttonText.text = "T..";
-                            }
-                            else if (netObj.currentAction == NetworkObjectAction.UPGRADING)
-                            {
-                                button.interactable = false;
-                                buttonText.text = "U..";
-                            }
-                        }
-                        break;
-                    }
-                    
-                }
-            }
-            else if (unitType == NetworkUnitType.ROCK)
-            {
-                foreach (NetworkObject netObj in NetworkClientManager.Instance.netObjs)
-                {
-                    if (netObj.objectID == myPlayerData.rockBuildingObjectID)
-                    {
-                        if (netObj.health <= 0)
-                        {
-                            button.interactable = false;
-                        }
-                        else
-                        {
-                            if (netObj.currentAction == NetworkObjectAction.NOTHING)
-                            {
-                                if (netObj.objectLevel < 4)
-                                {
-                                    button.interactable = true;
-                                    buttonText.text = "U\nP";
-                                }
-                                else
+                                else if (netObj.currentAction == NetworkObjectAction.UPGRADING)
                                 {
                                     button.interactable = false;
-                                    buttonText.text = "M\nA\nX";
+                                    buttonText.text = "U..";
                                 }
                             }
-                            else if (netObj.currentAction == NetworkObjectAction.TRAINING)
-                            {
-                                button.interactable = false;
-                                buttonText.text = "T..";
-                            }
-                            else if (netObj.currentAction == NetworkObjectAction.UPGRADING)
-                            {
-                                button.interactable = false;
-                                buttonText.text = "U..";
-                            }
+                            break;
                         }
-                        break;
-                    }
                     
+                    }
                 }
-            }
-            else if (unitType == NetworkUnitType.SCISSORS)
-            {
-                foreach (NetworkObject netObj in NetworkClientManager.Instance.netObjs)
+                else if (unitType == NetworkUnitType.ROCK)
                 {
-                    if (netObj.objectID == myPlayerData.scissorsBuildingObjectID)
+                    foreach (NetworkObject netObj in NetworkClientManager.Instance.netObjs)
                     {
-                        if (netObj.health <= 0)
+                        if (netObj.objectID == myPlayerData.rockBuildingObjectID)
                         {
-                            button.interactable = false;
-                        }
-                        else
-                        {
-                            if (netObj.currentAction == NetworkObjectAction.NOTHING)
+                            if (netObj.health <= 0)
                             {
-                                if (netObj.objectLevel < 4)
+                                button.interactable = false;
+                            }
+                            else
+                            {
+                                if (netObj.currentAction == NetworkObjectAction.NOTHING)
                                 {
-                                    button.interactable = true;
-                                    buttonText.text = "U\nP";
+                                    if (netObj.objectLevel < 4)
+                                    {
+                                        button.interactable = true;
+                                        buttonText.text = "U\nP";
+                                    }
+                                    else
+                                    {
+                                        button.interactable = false;
+                                        buttonText.text = "M\nA\nX";
+                                    }
                                 }
-                                else
+                                else if (netObj.currentAction == NetworkObjectAction.TRAINING)
                                 {
                                     button.interactable = false;
-                                    buttonText.text = "M\nA\nX";
+                                    buttonText.text = "T..";
+                                }
+                                else if (netObj.currentAction == NetworkObjectAction.UPGRADING)
+                                {
+                                    button.interactable = false;
+                                    buttonText.text = "U..";
                                 }
                             }
-                            else if (netObj.currentAction == NetworkObjectAction.TRAINING)
-                            {
-                                button.interactable = false;
-                                buttonText.text = "T..";
-                            }
-                            else if (netObj.currentAction == NetworkObjectAction.UPGRADING)
-                            {
-                                button.interactable = false;
-                                buttonText.text = "U..";
-                            }
+                            break;
                         }
-                        break;
-                    }
                     
+                    }
+                }
+                else if (unitType == NetworkUnitType.SCISSORS)
+                {
+                    foreach (NetworkObject netObj in NetworkClientManager.Instance.netObjs)
+                    {
+                        if (netObj.objectID == myPlayerData.scissorsBuildingObjectID)
+                        {
+                            if (netObj.health <= 0)
+                            {
+                                button.interactable = false;
+                            }
+                            else
+                            {
+                                if (netObj.currentAction == NetworkObjectAction.NOTHING)
+                                {
+                                    if (netObj.objectLevel < 4)
+                                    {
+                                        button.interactable = true;
+                                        buttonText.text = "U\nP";
+                                    }
+                                    else
+                                    {
+                                        button.interactable = false;
+                                        buttonText.text = "M\nA\nX";
+                                    }
+                                }
+                                else if (netObj.currentAction == NetworkObjectAction.TRAINING)
+                                {
+                                    button.interactable = false;
+                                    buttonText.text = "T..";
+                                }
+                                else if (netObj.currentAction == NetworkObjectAction.UPGRADING)
+                                {
+                                    button.interactable = false;
+                                    buttonText.text = "U..";
+                                }
+                            }
+                            break;
+                        }
+                    
+                    }
                 }
             }
+        }
+        else
+        {
+            button.interactable = false;
         }
     }
 

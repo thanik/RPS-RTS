@@ -11,11 +11,11 @@ public class ScriptTester : MonoBehaviour
     public List<NetworkObjectSnapshot> diff;
     void Start()
     {
-        diffSnapObjs.Add(new NetworkObjectSnapshot(SnapshotAction.UPDATE, 0, 0, NetworkObjectType.UNIT, NetworkUnitType.PAPER, NetworkObjectAction.NOTHING, new Vector3(1f, 1f), 1, 100, 1, 20f, new Vector3(0.5f, 0.5f)));
-        diffSnapObjs.Add(new NetworkObjectSnapshot(SnapshotAction.UPDATE, 1, 0, NetworkObjectType.UNIT, NetworkUnitType.ROCK, NetworkObjectAction.TRAINING, new Vector3(2f, 2f), 2, 100, 3, 20f, new Vector3(0.5f, 0.5f)));
+        diffSnapObjs.Add(new NetworkObjectSnapshot(0, 0, NetworkObjectType.UNIT, NetworkUnitType.PAPER, NetworkObjectAction.NOTHING, new Vector3(1f, 1f), 1, 100, 1, 20f, new Vector3(0.5f, 0.5f)));
+        diffSnapObjs.Add(new NetworkObjectSnapshot(1, 0, NetworkObjectType.UNIT, NetworkUnitType.ROCK, NetworkObjectAction.TRAINING, new Vector3(2f, 2f), 2, 100, 3, 20f, new Vector3(0.5f, 0.5f)));
 
-        diffSnapObjs2.Add(new NetworkObjectSnapshot(SnapshotAction.UPDATE, 0, 0, NetworkObjectType.UNIT, NetworkUnitType.PAPER, NetworkObjectAction.NOTHING, new Vector3(1f, 1f), 1, 100, 1, 20f, new Vector3(0.5f, 0.5f)));
-        diffSnapObjs2.Add(new NetworkObjectSnapshot(SnapshotAction.UPDATE, 1, 0, NetworkObjectType.UNIT, NetworkUnitType.ROCK, NetworkObjectAction.NOTHING, new Vector3(2f, 2f), 2, 100, 3, 20f, new Vector3(0.5f, 0.5f)));
+        diffSnapObjs2.Add(new NetworkObjectSnapshot(0, 0, NetworkObjectType.UNIT, NetworkUnitType.PAPER, NetworkObjectAction.NOTHING, new Vector3(1f, 1f), 1, 100, 1, 20f, new Vector3(0.5f, 0.5f)));
+        diffSnapObjs2.Add(new NetworkObjectSnapshot(1, 0, NetworkObjectType.UNIT, NetworkUnitType.ROCK, NetworkObjectAction.NOTHING, new Vector3(2f, 2f), 2, 100, 3, 20f, new Vector3(0.5f, 0.5f)));
         //diffSnapObjs2.Add(new NetworkObjectSnapshot(SnapshotAction.DESTROY, 2, 0, NetworkObjectType.UNIT, NetworkUnitType.ROCK, NetworkObjectAction.NOTHING, new Vector3(1f, 1f), 0, 100, 3, 20f, new Vector3(0.5f, 0.5f)));
 
 
@@ -23,7 +23,7 @@ public class ScriptTester : MonoBehaviour
         string diffArrayLog = "";
         foreach(NetworkObjectSnapshot n in diff)
         {
-            diffArrayLog += n.snapshotAction.ToString() + "\n" + n.objectID + "\n" + n.clientOwnerID + "\n" + n.objectType.ToString() + "\n" + n.unitType.ToString() + "\n" + n.currentAction.ToString() + "\n" + n.positionTarget.ToString() + "\n" + n.objectIDTarget + "\n" + n.health + "\n" + n.objectLevel + "\n" + n.cooldownTime + "\n" + n.currentPosition;
+            diffArrayLog += n.objectID + "\n" + n.clientOwnerID + "\n" + n.objectType.ToString() + "\n" + n.unitType.ToString() + "\n" + n.currentAction.ToString() + "\n" + n.positionTarget.ToString() + "\n" + n.objectIDTarget + "\n" + n.health + "\n" + n.objectLevel + "\n" + n.cooldownTime + "\n" + n.currentPosition;
             Debug.Log(diffArrayLog);
             diffArrayLog = "";
         }

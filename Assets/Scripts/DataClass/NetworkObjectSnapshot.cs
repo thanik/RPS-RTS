@@ -3,43 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 using MessagePack;
 
-public enum SnapshotAction
-{
-    UPDATE,
-    DESTROY
-}
-
 [MessagePackObject]
 public class NetworkObjectSnapshot
 {
     [Key(0)]
-    public SnapshotAction snapshotAction { get; set; }
-    [Key(1)]
     public int objectID { get; set; }
-    [Key(2)]
+    [Key(1)]
     public int clientOwnerID { get; set; }
-    [Key(3)]
+    [Key(2)]
     public NetworkObjectType objectType { get; set; }
-    [Key(4)]
+    [Key(3)]
     public NetworkUnitType unitType { get; set; }
-    [Key(5)]
+    [Key(4)]
     public NetworkObjectAction currentAction { get; set; }
-    [Key(6)]
+    [Key(5)]
     public Vector3 positionTarget { get; set; }
-    [Key(7)]
+    [Key(6)]
     public int objectIDTarget { get; set; }
-    [Key(8)]
+    [Key(7)]
     public int health { get; set; }
-    [Key(9)]
+    [Key(8)]
     public int objectLevel { get; set; }
-    [Key(10)]
+    [Key(9)]
     public float cooldownTime { get; set; }
-    [Key(11)]
+    [Key(10)]
     public Vector3 currentPosition { get; set; }
 
-    public NetworkObjectSnapshot(SnapshotAction snapshotAction, int objectID, int clientOwnerID, NetworkObjectType objectType, NetworkUnitType unitType, NetworkObjectAction currentAction, Vector3 positionTarget, int objectIDTarget, int health, int objectLevel, float cooldownTime, Vector3 currentPosition)
+    public NetworkObjectSnapshot(int objectID, int clientOwnerID, NetworkObjectType objectType, NetworkUnitType unitType, NetworkObjectAction currentAction, Vector3 positionTarget, int objectIDTarget, int health, int objectLevel, float cooldownTime, Vector3 currentPosition)
     {
-        this.snapshotAction = snapshotAction;
         this.objectID = objectID;
         this.clientOwnerID = clientOwnerID;
         this.objectType = objectType;
@@ -55,11 +46,6 @@ public class NetworkObjectSnapshot
 
     public NetworkObjectSnapshot(NetworkObject netObj)
     {
-        this.snapshotAction = SnapshotAction.UPDATE;
-        if (netObj.health <= 0 && netObj.objectType == NetworkObjectType.UNIT)
-        { 
-            this.snapshotAction = SnapshotAction.DESTROY;
-        }
         this.objectID = netObj.objectID;
         this.clientOwnerID = netObj.clientOwnerID;
         this.objectType = netObj.objectType;
@@ -80,11 +66,11 @@ public class NetworkObjectSnapshotComparer : IEqualityComparer<NetworkObjectSnap
 {
     public int GetHashCode(NetworkObjectSnapshot obj)
     {
-        return ((int)obj.snapshotAction + obj.objectID + obj.clientOwnerID + (int)obj.objectType + (int)obj.unitType + (int)obj.currentAction + obj.positionTarget.ToString() + obj.objectIDTarget + obj.health + obj.objectLevel + obj.cooldownTime.ToString() + obj.currentPosition.ToString()).GetHashCode();
+        return (obj.objectID + obj.clientOwnerID + (int)obj.objectType + (int)obj.unitType + (int)obj.currentAction + obj.positionTarget.ToString() + obj.objectIDTarget + obj.health + obj.objectLevel + obj.cooldownTime.ToString() + obj.currentPosition.ToString()).GetHashCode();
     }
 
     public bool Equals(NetworkObjectSnapshot x, NetworkObjectSnapshot y)
     {
-        return x.snapshotAction == y.snapshotAction && x.objectID == y.objectID && x.clientOwnerID == y.clientOwnerID && x.objectType == y.objectType && x.unitType == y.unitType && x.currentAction == y.currentAction && x.positionTarget == y.positionTarget && x.objectIDTarget == y.objectIDTarget && x.health == y.health && x.objectLevel == y.objectLevel && x.cooldownTime == y.cooldownTime && x.currentPosition == y.currentPosition;
+        return x.objectID == y.objectID && x.clientOwnerID == y.clientOwnerID && x.objectType == y.objectType && x.unitType == y.unitType && x.currentAction == y.currentAction && x.positionTarget == y.positionTarget && x.objectIDTarget == y.objectIDTarget && x.health == y.health && x.objectLevel == y.objectLevel && x.cooldownTime == y.cooldownTime && x.currentPosition == y.currentPosition;
     }
 }

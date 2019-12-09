@@ -17,50 +17,57 @@ public class trainButton : MonoBehaviour
 
     void Update()
     {
-        if (GameManagement.Instance.playerData != null && GameManagement.Instance.playerData.TryGetValue(NetworkClientManager.Instance.myClientID, out PlayerData myPlayerData))
+        if (GameManagement.Instance.gameMode == GameMode.CLIENT)
         {
-            int futureNumberOfUnit = myPlayerData.numberOfUnits + myPlayerData.paperTrainingQueue + myPlayerData.rockTrainingQueue + myPlayerData.scissorsTrainingQueue;
-            if (unitType == NetworkUnitType.PAPER)
+            if (GameManagement.Instance.playerData != null && GameManagement.Instance.playerData.TryGetValue(NetworkClientManager.Instance.myClientID, out PlayerData myPlayerData))
             {
-                GetComponentInChildren<TMP_Text>().text = myPlayerData.paperTrainingQueue.ToString();
-                foreach (NetworkObject netObj in NetworkClientManager.Instance.netObjs)
+                int futureNumberOfUnit = myPlayerData.numberOfUnits + myPlayerData.paperTrainingQueue + myPlayerData.rockTrainingQueue + myPlayerData.scissorsTrainingQueue;
+                if (unitType == NetworkUnitType.PAPER)
                 {
-                    if (netObj.objectID == myPlayerData.paperBuildingObjectID)
-                    {  
-                        button.interactable = (netObj.currentAction != NetworkObjectAction.UPGRADING && netObj.health > 0 && futureNumberOfUnit < GameManagement.Instance.maxUnitsPerPlayer);
-                        break;
-                    }
-                    
-                }
-            }
-            else if (unitType == NetworkUnitType.ROCK)
-            {
-                GetComponentInChildren<TMP_Text>().text = myPlayerData.rockTrainingQueue.ToString();
-                foreach (NetworkObject netObj in NetworkClientManager.Instance.netObjs)
-                {
-                    if (netObj.objectID == myPlayerData.rockBuildingObjectID)
+                    GetComponentInChildren<TMP_Text>().text = myPlayerData.paperTrainingQueue.ToString();
+                    foreach (NetworkObject netObj in NetworkClientManager.Instance.netObjs)
                     {
-                        button.interactable = (netObj.currentAction != NetworkObjectAction.UPGRADING && netObj.health > 0 && futureNumberOfUnit < GameManagement.Instance.maxUnitsPerPlayer);
-                        break;
+                        if (netObj.objectID == myPlayerData.paperBuildingObjectID)
+                        {
+                            button.interactable = (netObj.currentAction != NetworkObjectAction.UPGRADING && netObj.health > 0 && futureNumberOfUnit < GameManagement.Instance.maxUnitsPerPlayer);
+                            break;
+                        }
+
                     }
-                    
                 }
-            }
-            else if (unitType == NetworkUnitType.SCISSORS)
-            {
-                GetComponentInChildren<TMP_Text>().text = myPlayerData.scissorsTrainingQueue.ToString();
-                foreach (NetworkObject netObj in NetworkClientManager.Instance.netObjs)
+                else if (unitType == NetworkUnitType.ROCK)
                 {
-                    
-                    if (netObj.objectID == myPlayerData.scissorsBuildingObjectID)
+                    GetComponentInChildren<TMP_Text>().text = myPlayerData.rockTrainingQueue.ToString();
+                    foreach (NetworkObject netObj in NetworkClientManager.Instance.netObjs)
                     {
-                        
-                        button.interactable = (netObj.currentAction != NetworkObjectAction.UPGRADING && netObj.health > 0 && futureNumberOfUnit < GameManagement.Instance.maxUnitsPerPlayer);
-                        break;
+                        if (netObj.objectID == myPlayerData.rockBuildingObjectID)
+                        {
+                            button.interactable = (netObj.currentAction != NetworkObjectAction.UPGRADING && netObj.health > 0 && futureNumberOfUnit < GameManagement.Instance.maxUnitsPerPlayer);
+                            break;
+                        }
+
                     }
-                   
+                }
+                else if (unitType == NetworkUnitType.SCISSORS)
+                {
+                    GetComponentInChildren<TMP_Text>().text = myPlayerData.scissorsTrainingQueue.ToString();
+                    foreach (NetworkObject netObj in NetworkClientManager.Instance.netObjs)
+                    {
+
+                        if (netObj.objectID == myPlayerData.scissorsBuildingObjectID)
+                        {
+
+                            button.interactable = (netObj.currentAction != NetworkObjectAction.UPGRADING && netObj.health > 0 && futureNumberOfUnit < GameManagement.Instance.maxUnitsPerPlayer);
+                            break;
+                        }
+
+                    }
                 }
             }
+        }
+        else
+        {
+            button.interactable = false;
         }
     }
 

@@ -47,6 +47,7 @@ public class NetworkClientManager : Singleton<NetworkClientManager>
         if (isConnected)
         {
             networkGameTime += Time.deltaTime;
+            udpClient.BeginReceive(new AsyncCallback(ReceiveClientCallback), null);
         }
 
         if (connectTrigger)
@@ -61,6 +62,11 @@ public class NetworkClientManager : Singleton<NetworkClientManager>
             if (GameManagement.Instance.gameState == NetworkGameState.LOBBY)
             {
                 GameObject.Find("PageManager").GetComponent<PageManager>().showError(errorString);
+            }
+            else if (GameManagement.Instance.gameState == NetworkGameState.PLAYING)
+            {
+                GameManagement.Instance.gameState = NetworkGameState.END;
+                GameManagement.Instance.showGameOverServerShuttingDown();
             }
             errorTrigger = false;
         }
@@ -170,25 +176,31 @@ public class NetworkClientManager : Singleton<NetworkClientManager>
                 else if (receivedMsg.msgType == NetworkMessageType.UPDATE && receivedMsg.payload is SnapshotUpdatePayload)
                 {
                     snapshotPayload = (SnapshotUpdatePayload)receivedMsg.payload;
-                    lastSnapshotTime = ((SnapshotUpdatePayload)receivedMsg.payload).gameTime;
-                    snapshotUpdateTrigger = true;
+                    // ignore out of order snapshot
+                    if (snapshotPayload.gameTime > lastSnapshotTime)
+                    {
+                        lastSnapshotTime = ((SnapshotUpdatePayload)receivedMsg.payload).gameTime;
+                        snapshotUpdateTrigger = true;
+                    }
 
                 }
                 else if (receivedMsg.msgType == NetworkMessageType.GAMEOVER && receivedMsg.payload is GameOverPayload)
                 {
+                    Debug.Log("GAME OVER GOT!");
                     GameManagement.Instance.gameState = NetworkGameState.END;
                     winClientID = ((GameOverPayload)receivedMsg.payload).winClientID;
                     gameOverTrigger = true;
                 }
                 else if (receivedMsg.msgType == NetworkMessageType.SHUTDOWN)
                 {
+                    Debug.Log("Server shutting down.");
                     errorTrigger = true;
                     errorString = "Server shutting down.";
                     disconnect();
                 }
             }
 
-            udpClient.BeginReceive(new AsyncCallback(ReceiveClientCallback), null);
+            //udpClient.BeginReceive(new AsyncCallback(ReceiveClientCallback), null);
         }
         catch (Exception ex)
         {
@@ -366,7 +378,7 @@ public class NetworkClientManager : Singleton<NetworkClientManager>
                     }
                     netObj.networkTimeQueue.Insert(0, snapshotTime);
                     netObj.lastSnapshotTime = snapshotTime;
-                    if (snapObj.snapshotAction == SnapshotAction.DESTROY)
+                    if (snapObj.health <= 0 && snapObj.objectType == NetworkObjectType.UNIT)
                     {
                         netObjsToBeRemoved.Add(netObj);
                     }
@@ -380,6 +392,10 @@ public class NetworkClientManager : Singleton<NetworkClientManager>
             }
         }
 
+        //if (netObjsToBeInstantiated.Count > 0)
+        //{
+        //    Debug.Log("maxObjectID: " + maxObjectID);
+        //}
         foreach (NetworkObjectSnapshot netObjSnap in netObjsToBeInstantiated)
         {
             GameManagement.Instance.instantiateFromSnapshot(netObjSnap, snapshotTime);
@@ -389,9 +405,9 @@ public class NetworkClientManager : Singleton<NetworkClientManager>
 
         maxObjectID = newMaxObjectID;
 
-        if(snapshotObjCount - netObjsToBeRemoved.Count != netObjs.Count)
-        {
-            Debug.LogWarning("Object Count OUT OF SYNC DETECTED current: " + netObjs.Count + " expected: " + (snapshotObjCount - netObjsToBeRemoved.Count));
-        }
+        //if(snapshotObjCount - netObjsToBeRemoved.Count != netObjs.Count)
+        //{
+        //    Debug.LogWarning("Object Count OUT OF SYNC DETECTED current: " + netObjs.Count + " expected: " + (snapshotObjCount - netObjsToBeRemoved.Count));
+        //}
     }
 }

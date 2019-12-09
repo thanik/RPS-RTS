@@ -15,7 +15,7 @@ public class UnitsNumber : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(GameManagement.Instance.gameMode == GameMode.CLIENT)
+        if(GameManagement.Instance.gameMode == GameMode.CLIENT && GameManagement.Instance.playerData.ContainsKey(NetworkClientManager.Instance.myClientID))
         {
             text.text = GameManagement.Instance.playerData[NetworkClientManager.Instance.myClientID].numberOfUnits + "/" + GameManagement.Instance.maxUnitsPerPlayer;
         }

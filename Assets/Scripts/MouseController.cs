@@ -161,11 +161,11 @@ public class MouseController : MonoBehaviour
             List<NetworkActionSnapshot> actions = new List<NetworkActionSnapshot>();
             Vector3 positionClicked = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             positionClicked.z = 0f;
-            Debug.Log("Position clicked: " + positionClicked);
+            //Debug.Log("Position clicked: " + positionClicked);
             if (rayHit.collider)
             {
-                Debug.Log("Action do on unit");
-                Debug.Log(rayHit.collider.gameObject.GetComponent<NetworkObject>().objectID);
+                //Debug.Log("Action do on unit");
+                //Debug.Log(rayHit.collider.gameObject.GetComponent<NetworkObject>().objectID);
                 foreach (GameObject selectedObj in selectedObjects)
                 {
                     if (selectedObj)
@@ -206,7 +206,7 @@ public class MouseController : MonoBehaviour
             }
             else
             {
-                Debug.Log("Action do on ground");
+                //Debug.Log("Action do on ground");
                 foreach(GameObject selectedObj in selectedObjects)
                 {
                     if (selectedObj)

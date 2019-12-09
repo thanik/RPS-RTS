@@ -23,7 +23,7 @@ public class NetworkServerManager : Singleton<NetworkServerManager>
     private int currentObjectID = 0;
     private bool processActionTrigger = false;
     private List<NetworkObject> processActionQueue = new List<NetworkObject>();
-    private List<NetworkObject> netObjToBeDestroyed = new List<NetworkObject>();
+    public List<NetworkObject> netObjToBeDestroyed = new List<NetworkObject>();
 
     private List<NetworkObjectSnapshot> latestObjsSnapshot = new List<NetworkObjectSnapshot>();
 
@@ -38,6 +38,7 @@ public class NetworkServerManager : Singleton<NetworkServerManager>
         if (GameManagement.Instance.gameMode == GameMode.SERVER || GameManagement.Instance.gameMode == GameMode.LISTEN)
         {
             networkGameTime += Time.deltaTime;
+            udpClient.BeginReceive(new AsyncCallback(ReceiveServerCallback), null);
         }
 
         if (processActionTrigger)
@@ -46,7 +47,15 @@ public class NetworkServerManager : Singleton<NetworkServerManager>
             {
                 if (netObj.gameObject)
                 {
-                    netObj.GetComponent<NavMeshAgent>().SetDestination(netObj.positionTarget);
+                    if (netObj.currentAction == NetworkObjectAction.GUARD || netObj.currentAction == NetworkObjectAction.NOTHING || netObj.currentAction == NetworkObjectAction.ATTACK)
+                    {
+                        netObj.GetComponent<NavMeshAgent>().isStopped = true;
+                    }
+                    else
+                    {
+                        netObj.GetComponent<NavMeshAgent>().SetDestination(netObj.positionTarget);
+                        netObj.GetComponent<NavMeshAgent>().isStopped = false;
+                    }
                 }
             }
             processActionQueue.Clear();
@@ -58,7 +67,7 @@ public class NetworkServerManager : Singleton<NetworkServerManager>
     {
         if (GameManagement.Instance.gameMode == GameMode.SERVER || GameManagement.Instance.gameMode == GameMode.LISTEN)
         {
-            udpClient.BeginReceive(new AsyncCallback(ReceiveServerCallback), null);
+            //udpClient.BeginReceive(new AsyncCallback(ReceiveServerCallback), null);
             if (GameManagement.Instance.gameState == NetworkGameState.LOBBY)
             {
                 byte[] sendBytes = NetworkMessageEncoderDecoder.Encode(new NetworkMessage(NetworkMessageType.LOBBYDATA, new LobbyDataPayload { netClients = netClients, gameStartTime = GameManagement.Instance.gameStartTime }));
@@ -92,15 +101,20 @@ public class NetworkServerManager : Singleton<NetworkServerManager>
                 }
 
                 // destroy object in queue
-                foreach(NetworkObject netObj in netObjToBeDestroyed)
+                foreach (NetworkObject netObj in netObjToBeDestroyed)
                 {
 
-                    netObjs.Remove(netObj);
-                    if (netObj.TryGetComponent<StatusBarManager>(out StatusBarManager statusBarManager))
-                    {
-                        Destroy(statusBarManager.statusBar);
-                    }
-                    Destroy(netObj.gameObject);
+                    //netObjs.Remove(netObj);
+                    //if (netObj.TryGetComponent<StatusBarManager>(out StatusBarManager statusBarManager))
+                    //{
+                    //    Destroy(statusBarManager.statusBar);
+                    //}
+                    //Destroy(netObj.gameObject);
+                    netObj.gameObject.GetComponent<Rigidbody2D>().simulated = false;
+                    netObj.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                    netObj.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                    netObj.gameObject.GetComponent<NavMeshAgent>().enabled = false;
+                    netObj.gameObject.GetComponentInChildren<CircleCollider2D>().enabled = false;
                 }
                 netObjToBeDestroyed.Clear();
             }
@@ -146,10 +160,6 @@ public class NetworkServerManager : Singleton<NetworkServerManager>
         foreach(NetworkObject netObj in netObjs)
         {
             NetworkObjectSnapshot newObjSnap = new NetworkObjectSnapshot(netObj);
-            if(newObjSnap.snapshotAction == SnapshotAction.DESTROY)
-            {
-                netObjToBeDestroyed.Add(netObj);
-            }
             netSnapObjs.Add(newObjSnap);
         }
         return netSnapObjs;
@@ -321,7 +331,7 @@ public class NetworkServerManager : Singleton<NetworkServerManager>
                     }
                 }
             }
-            udpClient.BeginReceive(new AsyncCallback(ReceiveServerCallback), null);
+            //udpClient.BeginReceive(new AsyncCallback(ReceiveServerCallback), null);
         }
         catch (Exception ex)
         {
@@ -341,38 +351,47 @@ public class NetworkServerManager : Singleton<NetworkServerManager>
         {
             udpClient.BeginSend(sendBytes, sendBytes.Length, (IPEndPoint) endPoint.Create(client.socketAddress), new AsyncCallback(SendCallback), null);
         }
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(2f);
         StartCoroutine(SendServerTimestamp());
     }
 
     public void sendGameOverResult(int winClientID)
     {
-        List<NetworkObjectSnapshot> objSnaps = gatherDiffSnapshot();
-        //if (objSnaps.Count > 0)
-        //{
-        //    Debug.Log("Diff Update snapshot: " + objSnaps.Count);
-        //}
-
-        // calculate max object ID
-        int maxObjectID = 0;
-        foreach (NetworkObject netObj in netObjs)
+        try
         {
-            if (netObj.objectID > maxObjectID)
+            List<NetworkObjectSnapshot> objSnaps = gatherDiffSnapshot();
+            //if (objSnaps.Count > 0)
+            //{
+            //    Debug.Log("Diff Update snapshot: " + objSnaps.Count);
+            //}
+
+            // calculate max object ID
+            int maxObjectID = 0;
+            foreach (NetworkObject netObj in netObjs)
             {
-                maxObjectID = netObj.objectID;
+                if (netObj.objectID > maxObjectID)
+                {
+                    maxObjectID = netObj.objectID;
+                }
             }
-        }
 
-        byte[] sendBytes = NetworkMessageEncoderDecoder.Encode(new NetworkMessage(NetworkMessageType.UPDATE, new SnapshotUpdatePayload { gameTime = networkGameTime, netObjects = objSnaps, playerData = GameManagement.Instance.playerData, maxObjectID = maxObjectID, totalObjectCount = netObjs.Count })); ;
-        foreach (NetworkClient client in netClients)
-        {
-            udpClient.BeginSend(sendBytes, sendBytes.Length, (IPEndPoint)endPoint.Create(client.socketAddress), new AsyncCallback(SendCallback), null);
-        }
+            byte[] sendBytes = NetworkMessageEncoderDecoder.Encode(new NetworkMessage(NetworkMessageType.UPDATE, new SnapshotUpdatePayload { gameTime = networkGameTime, netObjects = objSnaps, playerData = GameManagement.Instance.playerData, maxObjectID = maxObjectID, totalObjectCount = netObjs.Count })); ;
+            byte[] sendBytes2 = NetworkMessageEncoderDecoder.Encode(new NetworkMessage(NetworkMessageType.GAMEOVER, new GameOverPayload { winClientID = winClientID }));
 
-        sendBytes = NetworkMessageEncoderDecoder.Encode(new NetworkMessage(NetworkMessageType.GAMEOVER, new GameOverPayload { winClientID = winClientID }));
-        foreach (NetworkClient client in netClients)
+            foreach (NetworkClient client in netClients)
+            {
+                udpClient.BeginSend(sendBytes, sendBytes.Length, (IPEndPoint)endPoint.Create(client.socketAddress), new AsyncCallback(SendCallback), null);
+                udpClient.BeginSend(sendBytes2, sendBytes2.Length, (IPEndPoint)endPoint.Create(client.socketAddress), new AsyncCallback(SendCallback), null);
+
+            }
+
+            //foreach (NetworkClient client in netClients)
+            //{
+            //}
+        }
+        catch(Exception ex)
         {
-            udpClient.BeginSend(sendBytes, sendBytes.Length, (IPEndPoint)endPoint.Create(client.socketAddress), new AsyncCallback(SendCallback), null);
+            Debug.LogException(ex);
         }
     }
 

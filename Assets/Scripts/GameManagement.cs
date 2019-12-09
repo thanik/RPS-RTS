@@ -79,19 +79,6 @@ public class GameManagement : Singleton<GameManagement>
             {
                 startGame();
             }
-
-            if (gameState == NetworkGameState.PLAYING)
-            {
-                if (!gameOverPanel)
-                {
-                    gameOverPanel = GameObject.Find("GameResultPanel");
-                }
-                gameOverPanel.SetActive(false);
-            }
-            else if (gameState == NetworkGameState.END)
-            {
-                gameOverPanel.SetActive(true);
-            }
         }
         else
         {
@@ -100,73 +87,86 @@ public class GameManagement : Singleton<GameManagement>
                 startGame();
             }
 
-            // update playerData
-            Dictionary<int, int> totalHealth = new Dictionary<int, int>();
-            Dictionary<int, int> numberOfUnits = new Dictionary<int, int>();
-            numberOfLosingPlayers = 0;
-            foreach (NetworkClient client in NetworkServerManager.Instance.netClients)
+            if (gameState == NetworkGameState.PLAYING)
             {
-                numberOfUnits[client.clientID] = 0;
-            }
-            foreach (NetworkObject netObj in NetworkServerManager.Instance.netObjs)
-            {
-                if (totalHealth.ContainsKey(netObj.clientOwnerID))
+                // update playerData
+                Dictionary<int, int> totalHealth = new Dictionary<int, int>();
+                Dictionary<int, int> numberOfUnits = new Dictionary<int, int>();
+                numberOfLosingPlayers = 0;
+                foreach (NetworkClient client in NetworkServerManager.Instance.netClients)
                 {
-                    totalHealth[netObj.clientOwnerID] += netObj.health;
+                    numberOfUnits[client.clientID] = 0;
+                    totalHealth[client.clientID] = 0;
                 }
-                else
+                foreach (NetworkObject netObj in NetworkServerManager.Instance.netObjs)
                 {
-                    totalHealth[netObj.clientOwnerID] = netObj.health;
-                }
-
-                if (netObj.objectType == NetworkObjectType.UNIT)
-                {
-                    if (numberOfUnits.ContainsKey(netObj.clientOwnerID))
+                    if (netObj.health > 0)
                     {
+                        totalHealth[netObj.clientOwnerID] += netObj.health;
+                    }
+
+                    if (netObj.objectType == NetworkObjectType.UNIT && netObj.health > 0)
+                    {
+                        
                         numberOfUnits[netObj.clientOwnerID] += 1;
                     }
-                    else
+                }
+
+                foreach (KeyValuePair<int, PlayerData> playerData in playerData)
+                {
+                    if (numberOfUnits.ContainsKey(playerData.Key))
                     {
-                        numberOfUnits[netObj.clientOwnerID] = 1;
+                        playerData.Value.numberOfUnits = numberOfUnits[playerData.Key];
+                    }
+
+                    if (totalHealth.ContainsKey(playerData.Key))
+                    {
+                        playerData.Value.overallHealth = totalHealth[playerData.Key];
+                        if (totalHealth[playerData.Key] <= 0)
+                        {
+                            //Debug.Log("Losing player: " + playerData.Key + ":" + totalHealth[playerData.Key]);
+                            numberOfLosingPlayers += 1;
+                        }
+                    }
+                }
+
+                if (NetworkServerManager.Instance.netClients.Count - numberOfLosingPlayers == 1 && gameState == NetworkGameState.PLAYING && gameEndTime == 0f)
+                {
+                    gameEndTime = NetworkServerManager.Instance.networkGameTime + 1.5f;
+                    //Debug.Log("GAME END TRIGGERED: " + NetworkServerManager.Instance.netClients.Count + ":" + numberOfLosingPlayers);
+                }
+
+                if (gameEndTime > 0f && NetworkServerManager.Instance.networkGameTime > gameEndTime)
+                {
+                    gameState = NetworkGameState.END;
+                    foreach (KeyValuePair<int, PlayerData> eachPlayerData in playerData)
+                    {
+                        if (eachPlayerData.Value.overallHealth > 0)
+                        {
+                            NetworkServerManager.Instance.sendGameOverResult(eachPlayerData.Value.clientID);
+                            break;
+                        }
+                        
                     }
                 }
             }
+        }
 
-            foreach (KeyValuePair<int, PlayerData> playerData in playerData)
+        if (gameState == NetworkGameState.PLAYING)
+        {
+            if (!gameOverPanel)
             {
-                if (numberOfUnits.ContainsKey(playerData.Key))
-                {
-                    playerData.Value.numberOfUnits = numberOfUnits[playerData.Key];
-                }
-
-                if (totalHealth.ContainsKey(playerData.Key))
-                {
-                    playerData.Value.overallHealth = totalHealth[playerData.Key];
-                    if (totalHealth[playerData.Key] <= 0)
-                    {
-                        numberOfLosingPlayers += 1;
-                    }
-                }
+                gameOverPanel = GameObject.Find("GameResultPanel");
             }
-
-            if (NetworkServerManager.Instance.netClients.Count - numberOfLosingPlayers == 1 && gameState == NetworkGameState.PLAYING && gameEndTime == 0f)
+            else
             {
-                gameEndTime = NetworkServerManager.Instance.networkGameTime + 1.25f;
+                gameOverPanel.SetActive(false);
             }
-
-            if (gameEndTime > 0f && NetworkServerManager.Instance.networkGameTime > gameEndTime)
-            {
-                gameState = NetworkGameState.END;
-                foreach (KeyValuePair<int, PlayerData> eachPlayerData in playerData)
-                {
-                    if (eachPlayerData.Value.overallHealth > 0)
-                    {
-                        NetworkServerManager.Instance.sendGameOverResult(eachPlayerData.Value.clientID);
-                    }
-                    break;
-                }
-                NetworkServerManager.Instance.stopServer();
-            }
+            
+        }
+        else if (gameState == NetworkGameState.END)
+        {
+            gameOverPanel.SetActive(true);
         }
     }
 
@@ -346,6 +346,13 @@ public class GameManagement : Singleton<GameManagement>
             gameOverPanel.transform.Find("resultText").GetComponent<TMP_Text>().text = "You lose!";
         }
     }
+
+    public void showGameOverServerShuttingDown()
+    {
+        gameOverPanel.SetActive(true);
+        gameOverPanel.transform.Find("resultText").GetComponent<TMP_Text>().text = "Server is shutting down.";
+    }
+    
     #endregion
 
     #region Server
