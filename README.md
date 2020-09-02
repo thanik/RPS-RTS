@@ -6,6 +6,8 @@ This work is a part of the submission in CMP501 Network Game Development module.
 
 [Demo video](https://www.youtube.com/watch?v=rBE9131TIPk)
 
+Executable binary can be found in [Release](../../releases) section.
+
 ## How to start the game
 1. As this game needs at least 2 players, so 3 instances of the game should be running.
 2. Start a new instance of the game as a dedicated server.
