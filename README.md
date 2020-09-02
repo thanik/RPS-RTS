@@ -14,6 +14,6 @@ This work is a part of the submission in CMP501 Network Game Development module.
 
 #### More detail can be found in the [PDF file](../master/Docs/Network%20Assessment%20Report.pdf) in Docs folder.
 
-## Original art assets by [Kenney](www.kenney.nl)
+## Original art assets by [Kenney](https://www.kenney.nl)
 - [Sci-Fi RTS](https://www.kenney.nl/assets/sci-fi-rts)
 - [Medieval RTS](https://www.kenney.nl/assets/medieval-rts)
